@@ -342,7 +342,7 @@ Table of Contents
 
    The following note should be added:
 
-   *  Record type numbers in the range 0x4000 through 0x7FFF, inclusive,
+   *  Record Type numbers in the range 0x8000 through 0xFFFF, inclusive,
       are reserved for experimentation and development.  IANA cannot
       assign them.
 
@@ -355,7 +355,7 @@ Table of Contents
 
    The following note should be added:
 
-   *  Record type numbers in the range 0x4000 through 0x7FFF, inclusive,
+   *  Protocol ID numbers in the range 0x8000 through 0xFFFF, inclusive,
       are reserved for experimentation and development.  IANA cannot
       assign them.
 
@@ -368,7 +368,7 @@ Table of Contents
 
    The following note should be added:
 
-   *  Record type numbers in the range 0x4000 through 0x7FFF, inclusive,
+   *  Error code numbers in the range 0x8000 through 0xFFFF, inclusive,
       are reserved for experimentation and development.  IANA cannot
       assign them.
 
@@ -381,9 +381,9 @@ Table of Contents
 
    The following note should be added:
 
-   *  Record type numbers in the range 0x4000 through 0x7FFF, inclusive,
-      are reserved for experimentation and development.  IANA cannot
-      assign them.
+   *  Warning code numbers in the range 0x8000 through 0xFFFF,
+      inclusive, are reserved for experimentation and development.  IANA
+      cannot assign them.
 
    The existing entries are left unchanged.  Should we remove the
    Unassigned and Reserved rows?  Can IANA handle an empty table?
