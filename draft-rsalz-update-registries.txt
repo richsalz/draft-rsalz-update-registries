@@ -342,7 +342,7 @@ Table of Contents
 
    The following note should be added:
 
-   *  Record Type numbers in the range 0x8000 through 0xFFFF, inclusive,
+   *  Record Type numbers in the range 0x4000 through 0x7FFF, inclusive,
       are reserved for experimentation and development.  IANA cannot
       assign them.
 
