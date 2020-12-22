@@ -235,7 +235,7 @@ The registration procedure is changed to specification required.
 
 The following note should be added:
 
-- Record type numbers in the range 0x4000 through 0x7FFF, inclusive,
+- Record Type numbers in the range 0x4000 through 0x7FFF, inclusive,
 are reserved for experimentation and development. IANA cannot assign them.
 
 The existing entries are left unchanged.
@@ -248,7 +248,7 @@ The registration procedure is changed to specification required.
 
 The following note should be added:
 
-- Record type numbers in the range 0x4000 through 0x7FFF, inclusive,
+- Protocol ID numbers in the range 0x8000 through 0xFFFF, inclusive,
 are reserved for experimentation and development. IANA cannot assign them.
 
 The existing entries are left unchanged.
@@ -261,7 +261,7 @@ The registration procedure is changed to specification required.
 
 The following note should be added:
 
-- Record type numbers in the range 0x4000 through 0x7FFF, inclusive,
+- Error code numbers in the range 0x8000 through 0xFFFF, inclusive,
 are reserved for experimentation and development. IANA cannot assign them.
 
 The existing entries are left unchanged.
@@ -273,7 +273,7 @@ The registration procedure is changed to specification required.
 
 The following note should be added:
 
-- Record type numbers in the range 0x4000 through 0x7FFF, inclusive,
+- Warning code numbers in the range 0x8000 through 0xFFFF, inclusive,
 are reserved for experimentation and development. IANA cannot assign them.
 
 The existing entries are left unchanged.
