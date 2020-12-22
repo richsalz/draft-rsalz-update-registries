@@ -3,7 +3,17 @@ docname: draft-rsalz-update-registries-latest
 title: The update registries draft
 category: info
 workgroup: ntp
-ipr: trust 200902
+ipr: trust200902
+
+stand_alone: yes
+pi:
+  toc: yes
+  sortrefs: yes
+  symrefs: yes
+  compact: yes
+  subcompact: no
+
+keyword: [NTP, extensions, registries, IANA]
 
 author:
   -
@@ -11,15 +21,272 @@ author:
     org: Akamai Technologies
     email: rsalz@akamai.com
 
-stand_alone: yes
-pi: [toc, sortrefs, symrefs]
-
 --- abstract
 
-abstract content here
+The Network Time Protocol (NTP) and Network Time Security (NTS) documents
+define a number of assigned number registries, collectively called the NTP
+registries.
+Some registries have wrong values, some registries
+do not follow current common practice, and some are just right.
+For the sake of completeness, this document defines all current registries.
 
--- middle
+--- middle
 
 # Introduction
 
-blah blah text.
+The Network Time Protocol (NTP) and Network Time Security (NTS) documents
+define a number of assigned number registries, collectively called the NTP
+registries.
+Some registries have wrong values, some registries
+do not follow current common practice, and some are just right.
+For the sake of completeness, this document defines all current registries.
+
+The bulk of this document can be divded into two parts:
+
+- First, each registry, its defining document, and a summary of its
+syntax is defined.
+- Second, the revised format and entries for each registry are defined.
+
+# Existing Registries
+
+This section describes the registries and the rules for them.
+It is intended to be a short summary of the syntax and registration
+requirements for each registry.
+The semantics and protocol processing rules for each registry -- that is,
+how an implementation acts when sending or receiving any of the fields --
+is not described here.
+
+## Reference ID, Kiss-o'-Death
+
+{{!RFC5905}} defined two registries, the Reference ID in Section 7.3, and the
+Kiss-o'-Death in Section 7.4.  Both of these are four ASCII characters, left
+justified and padded with zero's.  Entries that start with 0x58, the ASCII
+letter uppercase X, are reserved for private experimentation and development.
+Both registries are first-come first-served. The formal request to define
+the registries is in Section 16.
+
+Section 7.5 of {{!RFC5905}} defined the on-the-wire format of extension
+fields but did not create a registry for it.
+
+## Extension Field Types
+
+{{!RFC5906}} mentioned the Extension Field Types registry, and defined it
+indirectly by defining 30 extensions (15 each for request and response)
+in Section 13.
+It did not provide a formal definition of the columns in the registry.
+
+{{!RFC7821}} added a new entry, Checksum Complement, to the Extension
+Field Types registry.
+
+{{!RFC7822}} clarified the processing rules for Extension Field Types, particularly
+around the interaction with the Message Authentication Code (MAC) field.
+
+{{!RFC8573}} changed the cryptography used in the MAC field.
+
+The following problems exists with the current registry:
+
+- Many of the entries in the Extension Field Types registry have
+swapped nibbles (half of a byte),
+- Some values were mistakenly re-used.
+
+## Network Time Security Registries
+
+{{!RFC8915}} defines the Network Time Security (NTS) protocol.
+Sections 7.1 through 7.5 (inclusive) added entries to existing regisries.
+
+Section 7.6 created a new registry, NTS Key Establishment Record Types,
+that partitions the assigned numbers into three different registration
+policies: IETF Review, Specification Required, and Private or Experimental Use.
+
+Section 7.7 created a new registry, NTS Next Protocols,
+that similarly partitions the assigned numbers.
+
+Section 7.8 created two new registries, NTS Error Codes and NTS Warning Codes.
+Both regisries are also partitioned the same way.
+
+# New Registries
+
+The following general guidelines apply to all registries defined here:
+
+- Every entry reserves a partition for private use and experimentation.
+
+- Registries with ASCII fields are now limited to uppercase letters; fields
+starting with 0x2D, the ASCII minus sign, are reserved for private use.
+
+- The policy for every registry is now specification required, as defined
+in Section 4.6 of {{!RFC8126}}.
+
+The IESG is requested to choose three designated experts, with two being
+required to approve a registry change.
+
+Each entry described in the below sub-sections is intended to completely
+replace the existing entry with the same name.
+
+# IANA Consideration
+
+## NTP Reference Identifier Codes
+
+The registration procedure is changed to specification required.
+
+The Note is changed to read as follows:
+
+- Codes beginning with the character "-" are reserved for experimentation
+and development. IANA cannot assign them.
+
+The columns are defined as follows:
+
+- ID (required): a four-byte value padded on the right with zero's.
+Each value must be an ASCII uppercase letter or minus sign
+
+- Clock source (required): A brief text description of the ID
+
+- Reference (required): the publication defining the ID.
+
+The existing entries are left unchanged.
+
+## NTP Kiss-o'-Death Codes
+
+The registration procedure is changed to specification required.
+
+The Note is changed to read as follows:
+
+- Codes beginning with the character "-" are reserved for experimentation
+and development. IANA cannot assign them.
+
+The columns are defined as follows:
+
+- ID (required): a four-byte value padded on the right with zero's.
+Each value must be an ASCII uppercase letter or minus sign.
+
+- Meaning source (required): A brief text description of the ID.
+
+- Reference (required): the publication defining the ID.
+
+The existing entries are left unchanged.
+
+## NTP Extension Field Types
+
+The registration procedure is changed to specification required.
+
+The reference should have "RFC5906" added; if only one reference is
+possible, replace the existing 5905 with 5906.
+
+The following Note is added:
+
+- Field Types in the range 0xD000 throught 0xFFFF, inclusive, are reserved
+for experimentation and development. IANA cannot assign them.
+Both NTS Cookie and Autokey Message Request have the same Field Type;
+in practice this is not a problem as the field semantics will be
+determined by other parts of the message.
+
+The columns are defined as follows:
+
+- Field Type (required): A four-byte value in hexadecimal.
+
+- Meaning (required): A brief text description of the field type.
+
+- Reference (required): the publication defining the field type.
+
+The table is replaced with the following entries.
+Note that the intent is that the second and fourth digits in the Field Type
+column are switched.
+
+| Field Type | Meaning                             | Reference |
+|:-----------|:------------------------------------|:----------|
+| 0x0104     | Unique Identifier                   | RFC 8915, Section 5.3 |
+| 0x0200     | No-Operation Request                | RFC 5906  |
+| 0x0201     | Association Message Request         | RFC 5906  |
+| 0x0202     | Certificate Message Request         | RFC 5906  |
+| 0x0203     | Cookie Message Request              | RFC 5906  |
+| 0x0204     | NTS Cookie                          | RFC 8915, Section 5.4 |
+| 0x0204     | Autokey Message Request             | RFC 5906  |
+| 0x0205     | Leapseconds Message Request         | RFC 5906  |
+| 0x0206     | Sign Message Request                | RFC 5906  |
+| 0x0207     | IFF Identity Message Request        | RFC 5906  |
+| 0x0208     | GQ Identity Message Request         | RFC 5906  |
+| 0x0209     | MV Identity Message Request         | RFC 5906  |
+| 0x8200     | No-Operation Response               | RFC 5906  |
+| 0x0304     | NTS Cookie Placeholder              | RFC 8915, Section 5.5 |
+| 0x0404     | NTS Authenticator and Encrypted Extension Fields | RFC 8915, Section 5.6 |
+| 0x8201     | Association Message Response        | RFC 5906  |
+| 0x8202     | Certificate Message Response        | RFC 5906  |
+| 0x8203     | Cookie Message Response             | RFC 5906  |
+| 0x8204     | Autokey Message Response            | RFC 5906  |
+| 0x8205     | Leapseconds Message Response        | RFC 5906  |
+| 0x8206     | Sign Message Response               | RFC 5906  |
+| 0x8207     | IFF Identity Message Response       | RFC 5906  |
+| 0x8208     | GQ Identity Message Response        | RFC 5906  |
+| 0x8209     | MV Identity Message Response        | RFC 5906  |
+| 0xC200     | No-Operation Error Response         | RFC 5906  |
+| 0xC201     | Association Message Error Response  | RFC 5906  |
+| 0xC202     | Certificate Message Error Response  | RFC 5906  |
+| 0xC203     | Cookie Message Error Response       | RFC 5906  |
+| 0xC204     | Autokey Message Error Response      | RFC 5906  |
+| 0xC205     | Leapseconds Message Error Response  | RFC 5906  |
+| 0xC206     | Sign Message Error Response         | RFC 5906  |
+| 0xC207     | IFF Identity Message Error Response | RFC 5906  |
+| 0xC208     | GQ Identity Message Error Response  | RFC 5906  |
+| 0xC209     | MV Identity Message Error Response  | RFC 5906  |
+
+
+## Network Time Security Key Establishment Record Types
+
+The registration procedure is changed to specification required.
+
+The following note should be added:
+
+- Record type numbers in the range 0x4000 through 0x7FFF, inclusive,
+are reserved for experimentation and development. IANA cannot assign them.
+
+The existing entries are left unchanged.
+Should we remove the Unassigned and Reserved rows?
+Should we convert the numbers to hex?
+
+## Network Time Security Next Protocols
+
+The registration procedure is changed to specification required.
+
+The following note should be added:
+
+- Record type numbers in the range 0x4000 through 0x7FFF, inclusive,
+are reserved for experimentation and development. IANA cannot assign them.
+
+The existing entries are left unchanged.
+Should we remove the Unassigned and Reserved rows?
+Should we convert the numbers to hex?
+
+## Network Time Security Error Codes
+
+The registration procedure is changed to specification required.
+
+The following note should be added:
+
+- Record type numbers in the range 0x4000 through 0x7FFF, inclusive,
+are reserved for experimentation and development. IANA cannot assign them.
+
+The existing entries are left unchanged.
+Should we remove the Unassigned and Reserved rows?
+
+## Network Time Security Warning Codes
+
+The registration procedure is changed to specification required.
+
+The following note should be added:
+
+- Record type numbers in the range 0x4000 through 0x7FFF, inclusive,
+are reserved for experimentation and development. IANA cannot assign them.
+
+The existing entries are left unchanged.
+Should we remove the Unassigned and Reserved rows?
+Can IANA handle an empty table?
+
+# Acknowledgements
+
+The members of the NTP Working Group helped a great deal.
+Notable contributors include.
+
+* Miroslav Lichvar, RedHat
+* Daniel Franke, Akamai Technologies
+* Danny Mayer, Network Time Foundation
+
+And thanks to Harlen Stenn for providing popcorn.
