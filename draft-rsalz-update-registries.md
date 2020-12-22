@@ -28,7 +28,7 @@ define a number of assigned number registries, collectively called the NTP
 registries.
 Some registries have wrong values, some registries
 do not follow current common practice, and some are just right.
-For the sake of completeness, this document defines all current registries.
+For the sake of completeness, this document reviews all NTP and NTS registries.
 
 --- middle
 
@@ -39,7 +39,7 @@ define a number of assigned number registries, collectively called the NTP
 registries.
 Some registries have wrong values, some registries
 do not follow current common practice, and some are just right.
-For the sake of completeness, this document defines all current registries.
+For the sake of completeness, this document reviews all NTP and NTS registries.
 
 The bulk of this document can be divded into two parts:
 
@@ -181,7 +181,7 @@ determined by other parts of the message.
 
 The columns are defined as follows:
 
-- Field Type (required): A four-byte value in hexadecimal.
+- Field Type (required): A two-byte value in hexadecimal.
 
 - Meaning (required): A brief text description of the field type.
 
@@ -205,9 +205,9 @@ column are switched.
 | 0x0207     | IFF Identity Message Request        | RFC 5906  |
 | 0x0208     | GQ Identity Message Request         | RFC 5906  |
 | 0x0209     | MV Identity Message Request         | RFC 5906  |
-| 0x8200     | No-Operation Response               | RFC 5906  |
 | 0x0304     | NTS Cookie Placeholder              | RFC 8915, Section 5.5 |
 | 0x0404     | NTS Authenticator and Encrypted Extension Fields | RFC 8915, Section 5.6 |
+| 0x8200     | No-Operation Response               | RFC 5906  |
 | 0x8201     | Association Message Response        | RFC 5906  |
 | 0x8202     | Certificate Message Response        | RFC 5906  |
 | 0x8203     | Cookie Message Response             | RFC 5906  |
