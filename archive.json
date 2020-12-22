@@ -1,0 +1,24 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2020-12-22T01:00:22.695813+00:00",
+  "repo": "richsalz/draft-rsalz-update-registries",
+  "labels": [
+    {
+      "name": "editorial",
+      "description": "",
+      "color": "41d366"
+    },
+    {
+      "name": "design",
+      "description": "",
+      "color": "1d76db"
+    },
+    {
+      "name": "parked",
+      "description": "",
+      "color": "f9d0c4"
+    }
+  ],
+  "issues": [],
+  "pulls": []
+}
