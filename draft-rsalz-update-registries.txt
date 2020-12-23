@@ -100,8 +100,8 @@ Table of Contents
    This section describes the registries and the rules for them.  It is
    intended to be a short summary of the syntax and registration
    requirements for each registry.  The semantics and protocol
-   processing rules for each registry -- that is, how an implementation
-   acts when sending or receiving any of the fields -- is not described
+   processing rules for each registry - that is, how an implementation
+   acts when sending or receiving any of the fields - is not described
    here.
 
 2.1.  Reference ID, Kiss-o'-Death
