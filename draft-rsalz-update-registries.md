@@ -86,7 +86,8 @@ around the interaction with the Message Authentication Code (MAC) field.
 The following problems exists with the current registry:
 
 - Many of the entries in the Extension Field Types registry have
-swapped nibbles (half of a byte),
+swapped nibbles (half of a byte).
+This document marks the erroneous values as reserved.
 - Some values were mistakenly re-used.
 
 ## Network Time Security Registries
@@ -188,11 +189,11 @@ The columns are defined as follows:
 - Reference (required): the publication defining the field type.
 
 The table is replaced with the following entries.
-Note that the intent is that the second and fourth digits in the Field Type
-column are switched.
 
 | Field Type | Meaning                             | Reference |
 |:-----------|:------------------------------------|:----------|
+| 0x0002     | Reserved for historic reasons       | This RFC  |
+| 0x0102     | Reserved for historic reasons       | This RFC  |
 | 0x0104     | Unique Identifier                   | RFC 8915, Section 5.3 |
 | 0x0200     | No-Operation Request                | RFC 5906  |
 | 0x0201     | Association Message Request         | RFC 5906  |
@@ -205,8 +206,16 @@ column are switched.
 | 0x0207     | IFF Identity Message Request        | RFC 5906  |
 | 0x0208     | GQ Identity Message Request         | RFC 5906  |
 | 0x0209     | MV Identity Message Request         | RFC 5906  |
+| 0x0302     | Reserved for historic reasons       | This RFC  |
 | 0x0304     | NTS Cookie Placeholder              | RFC 8915, Section 5.5 |
+| 0x0402     | Reserved for historic reasons       | This RFC  |
 | 0x0404     | NTS Authenticator and Encrypted Extension Fields | RFC 8915, Section 5.6 |
+| 0x0502     | Reserved for historic reasons       | This RFC  |
+| 0x0602     | Reserved for historic reasons       | This RFC  |
+| 0x0702     | Reserved for historic reasons       | This RFC  |
+| 0x2005     | Reserved for historic reasons       | This RFC  |
+| 0x8002     | Reserved for historic reasons       | This RFC  |
+| 0x8102     | Reserved for historic reasons       | This RFC  |
 | 0x8200     | No-Operation Response               | RFC 5906  |
 | 0x8201     | Association Message Response        | RFC 5906  |
 | 0x8202     | Certificate Message Response        | RFC 5906  |
@@ -217,6 +226,14 @@ column are switched.
 | 0x8207     | IFF Identity Message Response       | RFC 5906  |
 | 0x8208     | GQ Identity Message Response        | RFC 5906  |
 | 0x8209     | MV Identity Message Response        | RFC 5906  |
+| 0x8302     | Reserved for historic reasons       | This RFC  |
+| 0x8402     | Reserved for historic reasons       | This RFC  |
+| 0x8502     | Reserved for historic reasons       | This RFC  |
+| 0x8602     | Reserved for historic reasons       | This RFC  |
+| 0x8702     | Reserved for historic reasons       | This RFC  |
+| 0x8802     | Reserved for historic reasons       | This RFC  |
+| 0xC002     | Reserved for historic reasons       | This RFC  |
+| 0xC102     | Reserved for historic reasons       | This RFC  |
 | 0xC200     | No-Operation Error Response         | RFC 5906  |
 | 0xC201     | Association Message Error Response  | RFC 5906  |
 | 0xC202     | Certificate Message Error Response  | RFC 5906  |
@@ -227,7 +244,15 @@ column are switched.
 | 0xC207     | IFF Identity Message Error Response | RFC 5906  |
 | 0xC208     | GQ Identity Message Error Response  | RFC 5906  |
 | 0xC209     | MV Identity Message Error Response  | RFC 5906  |
-
+| 0xC302     | Reserved for historic reasons       | This RFC  |
+| 0xC402     | Reserved for historic reasons       | This RFC  |
+| 0xC502     | Reserved for historic reasons       | This RFC  |
+| 0xC602     | Reserved for historic reasons       | This RFC  |
+| 0xC702     | Reserved for historic reasons       | This RFC  |
+| 0xC802     | Reserved for historic reasons       | This RFC  |
+| 0x0902     | Reserved for historic reasons       | This RFC  |
+| 0x8902     | Reserved for historic reasons       | This RFC  |
+| 0xC902     | Reserved for historic reasons       | This RFC  |
 
 ## Network Time Security Key Establishment Record Types
 
