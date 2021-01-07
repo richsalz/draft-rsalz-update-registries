@@ -70,10 +70,7 @@ fields but did not create a registry for it.
 
 ## Extension Field Types
 
-{{!RFC5905}} defined an Extension Field Format with a 16-bit type and a
-16-bit length field.
-
-{{!RFC5906}} mentioned an Extension Field Types registry, and defined it
+{{!RFC5906}} mentioned the Extension Field Types registry, and defined it
 indirectly by defining 30 extensions (15 each for request and response)
 in Section 13.
 It did not provide a formal definition of the columns in the registry.
@@ -91,12 +88,8 @@ around the interaction with the Message Authentication Code (MAC) field.
 The following problems exists with the current registry:
 
 - Many of the entries in the Extension Field Types registry have
-swapped some of the bytes; 1234 is listed as 1432 for example.
+swapped some of the nibbles; 1234 is listed as 1432 for example.
 This document marks the erroneous values as reserved.
-- The field type registry includes the Field Type, as defined in Figure
-14 of {{!RFC5905}}, but also the length. This is arguably an error, but
-one we will preserve as existing software might depend on the length values
-being fixed.
 - Some values were mistakenly re-used.
 
 ## Network Time Security Registries
@@ -182,7 +175,7 @@ The reference should be {{!RFC5906}} added, if possible.
 
 The following Note is added:
 
-- Field Types in the range 0xD000 through 0xFF00, inclusive, are reserved
+- Field Types in the range 0xF000 through 0xFFFF, inclusive, are reserved
 for experimentation and development. IANA cannot assign them.
 Both NTS Cookie and Autokey Message Request have the same Field Type;
 in practice this is not a problem as the field semantics will be
@@ -190,8 +183,7 @@ determined by other parts of the message.
 
 The columns are defined as follows:
 
-- Field Type (required): A four-byte value in hexadecimal, that includes
-the type as the top two bytes and the length as the bottom two.
+- Field Type (required): A two-byte value in hexadecimal.
 
 - Meaning (required): A brief text description of the field type.
 
