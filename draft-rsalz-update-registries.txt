@@ -4,8 +4,8 @@
 
 ntp                                                              R. Salz
 Internet-Draft                                       Akamai Technologies
-Intended status: Informational                            6 January 2021
-Expires: 10 July 2021
+Intended status: Informational                            7 January 2021
+Expires: 11 July 2021
 
 
                       The update registries draft
@@ -42,7 +42,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 July 2021.
+   This Internet-Draft will expire on 11 July 2021.
 
 Copyright Notice
 
@@ -119,11 +119,8 @@ Table of Contents
 
 2.2.  Extension Field Types
 
-   [RFC5905] defined an Extension Field Format with a 16-bit type and a
-   16-bit length field.
-
-   [RFC5906] mentioned an Extension Field Types registry, and defined it
-   indirectly by defining 30 extensions (15 each for request and
+   [RFC5906] mentioned the Extension Field Types registry, and defined
+   it indirectly by defining 30 extensions (15 each for request and
    response) in Section 13.  It did not provide a formal definition of
    the columns in the registry.  Section 10 of [RFC5906] splits the
    Field Type into four subfields, only for use within the Autokey
@@ -141,13 +138,8 @@ Table of Contents
    The following problems exists with the current registry:
 
    *  Many of the entries in the Extension Field Types registry have
-      swapped some of the bytes; 1234 is listed as 1432 for example.
+      swapped some of the nibbles; 1234 is listed as 1432 for example.
       This document marks the erroneous values as reserved.
-
-   *  The field type registry includes the Field Type, as defined in
-      Figure 14 of [RFC5905], but also the length.  This is arguably an
-      error, but one we will preserve as existing software might depend
-      on the length values being fixed.
 
    *  Some values were mistakenly re-used.
 
@@ -238,7 +230,7 @@ Table of Contents
 
    The following Note is added:
 
-   *  Field Types in the range 0xD000 through 0xFF00, inclusive, are
+   *  Field Types in the range 0xF000 through 0xFFFF, inclusive, are
       reserved for experimentation and development.  IANA cannot assign
       them.  Both NTS Cookie and Autokey Message Request have the same
       Field Type; in practice this is not a problem as the field
@@ -246,9 +238,7 @@ Table of Contents
 
    The columns are defined as follows:
 
-   *  Field Type (required): A four-byte value in hexadecimal, that
-      includes the type as the top two bytes and the length as the
-      bottom two.
+   *  Field Type (required): A two-byte value in hexadecimal.
 
    *  Meaning (required): A brief text description of the field type.
 
