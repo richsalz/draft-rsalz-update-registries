@@ -49,7 +49,23 @@ html {
   --link-color: #2a6496;
   --highlight-color: #f9f9f9;
   --line-color: #eee;
+  --pilcrow-weak: #ddd;
+  --pilcrow-strong: #bbb;
   --small-font-size: 14.5px;
+  scrollbar-color: #bbb #eee;
+}
+@media (prefers-color-scheme: dark) {
+html {
+  --background-color: #121212;
+  --text-color: #f0f0f0;
+  --title-color: #fff;
+  --link-color: #4da4f0;
+  --highlight-color: #282828;
+  --line-color: #444;
+  --pilcrow-weak: #444;
+  --pilcrow-strong: #666;
+  scrollbar-color: #777 #333;
+}
 }
 body {
   max-width: 600px;
@@ -267,10 +283,6 @@ figcaption, caption {
     vertical-align: text-bottom;
     padding-bottom: 8px;
   }
-  table {
-    display: inline-block;
-    overflow-x: auto;
-  }
 }
 
 /* aside, blockquote */
@@ -341,17 +353,23 @@ table p {
 /* pilcrow */
 a.pilcrow {
   margin-left: 3px;
-  visibility: hidden;
+  opacity: 0.2;
   user-select: none;
 }
-a.pilcrow[href] { color: #ddd; }
+a.pilcrow[href] { color: var(--pilcrow-weak); }
 a.pilcrow[href]:hover { text-decoration: none; }
-@media screen {
+@media not print {
   :hover > a.pilcrow {
-    visibility: visible;
+    opacity: 1;
   }
-  a.pilcrow:hover {
+  a.pilcrow[href]:hover {
+    color: var(--pilcrow-strong);
     background-color: transparent;
+  }
+}
+@media print {
+  a.pilcrow {
+    display: none;
   }
 }
 
@@ -831,7 +849,7 @@ address div.right {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Salz</td>
-<td class="center">Expires 11 July 2021</td>
+<td class="center">Expires 31 July 2021</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -844,12 +862,12 @@ address div.right {
 <dd class="internet-draft">draft-rsalz-update-registries-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2021-01-07" class="published">7 January 2021</time>
+<time datetime="2021-01-27" class="published">27 January 2021</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2021-07-11">11 July 2021</time></dd>
+<dd class="expires"><time datetime="2021-07-31">31 July 2021</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -896,7 +914,7 @@ For the sake of completeness, this document reviews all NTP and NTS registries.<
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 11 July 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 31 July 2021.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -924,60 +942,60 @@ For the sake of completeness, this document reviews all NTP and NTS registries.<
         <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
 <a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
         </h2>
-<nav class="toc"><ul class="compact ulEmpty toc">
-<li class="compact ulEmpty toc" id="section-toc.1-1.1">
+<nav class="toc"><ul class="toc compact ulEmpty">
+<li class="toc compact ulEmpty" id="section-toc.1-1.1">
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="xref">1</a>.  <a href="#name-introduction" class="xref">Introduction</a><a href="#section-toc.1-1.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="compact ulEmpty toc" id="section-toc.1-1.2">
+          <li class="toc compact ulEmpty" id="section-toc.1-1.2">
             <p id="section-toc.1-1.2.1"><a href="#section-2" class="xref">2</a>.  <a href="#name-existing-registries" class="xref">Existing Registries</a><a href="#section-toc.1-1.2.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty toc compact">
-<li class="ulEmpty toc compact" id="section-toc.1-1.2.2.1">
+<ul class="toc compact ulEmpty">
+<li class="toc compact ulEmpty" id="section-toc.1-1.2.2.1">
                 <p id="section-toc.1-1.2.2.1.1" class="keepWithNext"><a href="#section-2.1" class="xref">2.1</a>.  <a href="#name-reference-id-kiss-o-death" class="xref">Reference ID, Kiss-o'-Death</a><a href="#section-toc.1-1.2.2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.2.2.2">
+              <li class="toc compact ulEmpty" id="section-toc.1-1.2.2.2">
                 <p id="section-toc.1-1.2.2.2.1" class="keepWithNext"><a href="#section-2.2" class="xref">2.2</a>.  <a href="#name-extension-field-types" class="xref">Extension Field Types</a><a href="#section-toc.1-1.2.2.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.2.2.3">
+              <li class="toc compact ulEmpty" id="section-toc.1-1.2.2.3">
                 <p id="section-toc.1-1.2.2.3.1"><a href="#section-2.3" class="xref">2.3</a>.  <a href="#name-network-time-security-regis" class="xref">Network Time Security Registries</a><a href="#section-toc.1-1.2.2.3.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="compact ulEmpty toc" id="section-toc.1-1.3">
+          <li class="toc compact ulEmpty" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1"><a href="#section-3" class="xref">3</a>.  <a href="#name-new-registries" class="xref">New Registries</a><a href="#section-toc.1-1.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="compact ulEmpty toc" id="section-toc.1-1.4">
+          <li class="toc compact ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="xref">4</a>.  <a href="#name-iana-consideration" class="xref">IANA Consideration</a><a href="#section-toc.1-1.4.1" class="pilcrow">¶</a></p>
-<ul class="ulEmpty toc compact">
-<li class="ulEmpty toc compact" id="section-toc.1-1.4.2.1">
+<ul class="toc compact ulEmpty">
+<li class="toc compact ulEmpty" id="section-toc.1-1.4.2.1">
                 <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="xref">4.1</a>.  <a href="#name-ntp-reference-identifier-co" class="xref">NTP Reference Identifier Codes</a><a href="#section-toc.1-1.4.2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.4.2.2">
+              <li class="toc compact ulEmpty" id="section-toc.1-1.4.2.2">
                 <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="xref">4.2</a>.  <a href="#name-ntp-kiss-o-death-codes" class="xref">NTP Kiss-o'-Death Codes</a><a href="#section-toc.1-1.4.2.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.4.2.3">
+              <li class="toc compact ulEmpty" id="section-toc.1-1.4.2.3">
                 <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="xref">4.3</a>.  <a href="#name-ntp-extension-field-types" class="xref">NTP Extension Field Types</a><a href="#section-toc.1-1.4.2.3.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.4.2.4">
+              <li class="toc compact ulEmpty" id="section-toc.1-1.4.2.4">
                 <p id="section-toc.1-1.4.2.4.1"><a href="#section-4.4" class="xref">4.4</a>.  <a href="#name-network-time-security-key-e" class="xref">Network Time Security Key Establishment Record Types</a><a href="#section-toc.1-1.4.2.4.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.4.2.5">
+              <li class="toc compact ulEmpty" id="section-toc.1-1.4.2.5">
                 <p id="section-toc.1-1.4.2.5.1"><a href="#section-4.5" class="xref">4.5</a>.  <a href="#name-network-time-security-next-" class="xref">Network Time Security Next Protocols</a><a href="#section-toc.1-1.4.2.5.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.4.2.6">
+              <li class="toc compact ulEmpty" id="section-toc.1-1.4.2.6">
                 <p id="section-toc.1-1.4.2.6.1"><a href="#section-4.6" class="xref">4.6</a>.  <a href="#name-network-time-security-error" class="xref">Network Time Security Error Codes</a><a href="#section-toc.1-1.4.2.6.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="ulEmpty toc compact" id="section-toc.1-1.4.2.7">
+              <li class="toc compact ulEmpty" id="section-toc.1-1.4.2.7">
                 <p id="section-toc.1-1.4.2.7.1"><a href="#section-4.7" class="xref">4.7</a>.  <a href="#name-network-time-security-warni" class="xref">Network Time Security Warning Codes</a><a href="#section-toc.1-1.4.2.7.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 </li>
-          <li class="compact ulEmpty toc" id="section-toc.1-1.5">
+          <li class="toc compact ulEmpty" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="xref">5</a>.  <a href="#name-acknowledgements" class="xref">Acknowledgements</a><a href="#section-toc.1-1.5.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="compact ulEmpty toc" id="section-toc.1-1.6">
+          <li class="toc compact ulEmpty" id="section-toc.1-1.6">
             <p id="section-toc.1-1.6.1"><a href="#section-6" class="xref">6</a>.  <a href="#name-normative-references" class="xref">Normative References</a><a href="#section-toc.1-1.6.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="compact ulEmpty toc" id="section-toc.1-1.7">
+          <li class="toc compact ulEmpty" id="section-toc.1-1.7">
             <p id="section-toc.1-1.7.1"><a href="#section-appendix.a" class="xref"></a><a href="#name-authors-address" class="xref">Author's Address</a><a href="#section-toc.1-1.7.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
@@ -995,7 +1013,7 @@ registries.
 Some registries have wrong values, some registries
 do not follow current common practice, and some are just right.
 For the sake of completeness, this document reviews all NTP and NTS registries.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">The bulk of this document can be divded into two parts:<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-2">The bulk of this document can be divided into two parts:<a href="#section-1-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-1-3.1">First, each registry, its defining document, and a summary of its
 syntax is defined.<a href="#section-1-3.1" class="pilcrow">¶</a>
@@ -1022,8 +1040,9 @@ is not described here.<a href="#section-2-1" class="pilcrow">¶</a></p>
 <a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-reference-id-kiss-o-death" class="section-name selfRef">Reference ID, Kiss-o'-Death</a>
         </h3>
 <p id="section-2.1-1"><span>[<a href="#RFC5905" class="xref">RFC5905</a>]</span> defined two registries, the Reference ID in Section 7.3, and the
-Kiss-o'-Death in Section 7.4.  Both of these are four ASCII characters, left
-justified and padded with zero's.  Entries that start with 0x58, the ASCII
+Kiss-o'-Death in Section 7.4.  Both of these are allowed to be four ASCII
+characters; padded on the right with all-bits-zero if necessary.
+Entries that start with 0x58, the ASCII
 letter uppercase X, are reserved for private experimentation and development.
 Both registries are first-come first-served. The formal request to define
 the registries is in Section 16.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
@@ -1050,7 +1069,7 @@ around the interaction with the Message Authentication Code (MAC) field.<a href=
 <p id="section-2.2-5">The following problems exists with the current registry:<a href="#section-2.2-5" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2.2-6.1">Many of the entries in the Extension Field Types registry have
-swapped some of the nibbles; 1234 is listed as 1432 for example.
+swapped some of the nibbles; 0x1234 is listed as 0x1432 for example.
 This document marks the erroneous values as reserved.<a href="#section-2.2-6.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-2.2-6.2">Some values were mistakenly re-used.<a href="#section-2.2-6.2" class="pilcrow">¶</a>
@@ -1064,14 +1083,14 @@ This document marks the erroneous values as reserved.<a href="#section-2.2-6.1" 
 <a href="#section-2.3" class="section-number selfRef">2.3. </a><a href="#name-network-time-security-regis" class="section-name selfRef">Network Time Security Registries</a>
         </h3>
 <p id="section-2.3-1"><span>[<a href="#RFC8915" class="xref">RFC8915</a>]</span> defines the Network Time Security (NTS) protocol.
-Sections 7.1 through 7.5 (inclusive) added entries to existing regisries.<a href="#section-2.3-1" class="pilcrow">¶</a></p>
+Sections 7.1 through 7.5 (inclusive) added entries to existing registries.<a href="#section-2.3-1" class="pilcrow">¶</a></p>
 <p id="section-2.3-2">Section 7.6 created a new registry, NTS Key Establishment Record Types,
 that partitions the assigned numbers into three different registration
 policies: IETF Review, Specification Required, and Private or Experimental Use.<a href="#section-2.3-2" class="pilcrow">¶</a></p>
 <p id="section-2.3-3">Section 7.7 created a new registry, NTS Next Protocols,
 that similarly partitions the assigned numbers.<a href="#section-2.3-3" class="pilcrow">¶</a></p>
 <p id="section-2.3-4">Section 7.8 created two new registries, NTS Error Codes and NTS Warning Codes.
-Both regisries are also partitioned the same way.<a href="#section-2.3-4" class="pilcrow">¶</a></p>
+Both registries are also partitioned the same way.<a href="#section-2.3-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1086,7 +1105,8 @@ Both regisries are also partitioned the same way.<a href="#section-2.3-4" class=
 <li class="normal" id="section-3-2.1">Every entry reserves a partition for private use and experimentation.<a href="#section-3-2.1" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="section-3-2.2">Registries with ASCII fields are now limited to uppercase letters; fields
-starting with 0x2D, the ASCII minus sign, are reserved for private use.<a href="#section-3-2.2" class="pilcrow">¶</a>
+starting with 0x2D, the ASCII minus sign, are reserved for private use
+and experimentation.<a href="#section-3-2.2" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="section-3-2.3">The policy for every registry is now specification required, as defined
 in Section 4.6 of <span>[<a href="#RFC8126" class="xref">RFC8126</a>]</span>.<a href="#section-3-2.3" class="pilcrow">¶</a>
@@ -1510,9 +1530,7 @@ determined by other parts of the message.<a href="#section-4.3-4.1" class="pilcr
 are reserved for experimentation and development. IANA cannot assign them.<a href="#section-4.4-3.1" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-4.4-4">The existing entries are left unchanged.
-Should we remove the Unassigned and Reserved rows?
-Should we convert the numbers to hex?<a href="#section-4.4-4" class="pilcrow">¶</a></p>
+<p id="section-4.4-4">The existing entries are left unchanged.<a href="#section-4.4-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="network-time-security-next-protocols">
@@ -1527,9 +1545,7 @@ Should we convert the numbers to hex?<a href="#section-4.4-4" class="pilcrow">¶
 are reserved for experimentation and development. IANA cannot assign them.<a href="#section-4.5-3.1" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-4.5-4">The existing entries are left unchanged.
-Should we remove the Unassigned and Reserved rows?
-Should we convert the numbers to hex?<a href="#section-4.5-4" class="pilcrow">¶</a></p>
+<p id="section-4.5-4">The existing entries are left unchanged.<a href="#section-4.5-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="network-time-security-error-codes">
@@ -1544,8 +1560,7 @@ Should we convert the numbers to hex?<a href="#section-4.5-4" class="pilcrow">¶
 are reserved for experimentation and development. IANA cannot assign them.<a href="#section-4.6-3.1" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-4.6-4">The existing entries are left unchanged.
-Should we remove the Unassigned and Reserved rows?<a href="#section-4.6-4" class="pilcrow">¶</a></p>
+<p id="section-4.6-4">The existing entries are left unchanged.<a href="#section-4.6-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="network-time-security-warning-codes">
@@ -1560,9 +1575,7 @@ Should we remove the Unassigned and Reserved rows?<a href="#section-4.6-4" class
 are reserved for experimentation and development. IANA cannot assign them.<a href="#section-4.7-3.1" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-4.7-4">The existing entries are left unchanged.
-Should we remove the Unassigned and Reserved rows?
-Can IANA handle an empty table?<a href="#section-4.7-4" class="pilcrow">¶</a></p>
+<p id="section-4.7-4">The existing entries are left unchanged.<a href="#section-4.7-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1580,6 +1593,8 @@ Notable contributors include.<a href="#section-5-1" class="pilcrow">¶</a></p>
         <li class="normal" id="section-5-2.2">Daniel Franke, Akamai Technologies<a href="#section-5-2.2" class="pilcrow">¶</a>
 </li>
         <li class="normal" id="section-5-2.3">Danny Mayer, Network Time Foundation<a href="#section-5-2.3" class="pilcrow">¶</a>
+</li>
+        <li class="normal" id="section-5-2.4">Michelle Cotton, IANA<a href="#section-5-2.4" class="pilcrow">¶</a>
 </li>
       </ul>
 <p id="section-5-3">And thanks to Harlen Stenn for providing popcorn.<a href="#section-5-3" class="pilcrow">¶</a></p>

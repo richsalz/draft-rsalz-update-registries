@@ -4,8 +4,8 @@
 
 ntp                                                              R. Salz
 Internet-Draft                                       Akamai Technologies
-Intended status: Informational                            7 January 2021
-Expires: 11 July 2021
+Intended status: Informational                           27 January 2021
+Expires: 31 July 2021
 
 
                       The update registries draft
@@ -42,7 +42,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 July 2021.
+   This Internet-Draft will expire on 31 July 2021.
 
 Copyright Notice
 
@@ -87,7 +87,7 @@ Table of Contents
    right.  For the sake of completeness, this document reviews all NTP
    and NTS registries.
 
-   The bulk of this document can be divded into two parts:
+   The bulk of this document can be divided into two parts:
 
    *  First, each registry, its defining document, and a summary of its
       syntax is defined.
@@ -107,12 +107,12 @@ Table of Contents
 2.1.  Reference ID, Kiss-o'-Death
 
    [RFC5905] defined two registries, the Reference ID in Section 7.3,
-   and the Kiss-o'-Death in Section 7.4.  Both of these are four ASCII
-   characters, left justified and padded with zero's.  Entries that
-   start with 0x58, the ASCII letter uppercase X, are reserved for
-   private experimentation and development.  Both registries are first-
-   come first-served.  The formal request to define the registries is in
-   Section 16.
+   and the Kiss-o'-Death in Section 7.4.  Both of these are allowed to
+   be four ASCII characters; padded on the right with all-bits-zero if
+   necessary.  Entries that start with 0x58, the ASCII letter uppercase
+   X, are reserved for private experimentation and development.  Both
+   registries are first-come first-served.  The formal request to define
+   the registries is in Section 16.
 
    Section 7.5 of [RFC5905] defined the on-the-wire format of extension
    fields but did not create a registry for it.
@@ -138,15 +138,15 @@ Table of Contents
    The following problems exists with the current registry:
 
    *  Many of the entries in the Extension Field Types registry have
-      swapped some of the nibbles; 1234 is listed as 1432 for example.
-      This document marks the erroneous values as reserved.
+      swapped some of the nibbles; 0x1234 is listed as 0x1432 for
+      example.  This document marks the erroneous values as reserved.
 
    *  Some values were mistakenly re-used.
 
 2.3.  Network Time Security Registries
 
    [RFC8915] defines the Network Time Security (NTS) protocol.  Sections
-   7.1 through 7.5 (inclusive) added entries to existing regisries.
+   7.1 through 7.5 (inclusive) added entries to existing registries.
 
    Section 7.6 created a new registry, NTS Key Establishment Record
    Types, that partitions the assigned numbers into three different
@@ -157,7 +157,7 @@ Table of Contents
    similarly partitions the assigned numbers.
 
    Section 7.8 created two new registries, NTS Error Codes and NTS
-   Warning Codes.  Both regisries are also partitioned the same way.
+   Warning Codes.  Both registries are also partitioned the same way.
 
 3.  New Registries
 
@@ -169,7 +169,7 @@ Table of Contents
 
    *  Registries with ASCII fields are now limited to uppercase letters;
       fields starting with 0x2D, the ASCII minus sign, are reserved for
-      private use.
+      private use and experimentation.
 
    *  The policy for every registry is now specification required, as
       defined in Section 4.6 of [RFC8126].
@@ -395,8 +395,7 @@ Table of Contents
       are reserved for experimentation and development.  IANA cannot
       assign them.
 
-   The existing entries are left unchanged.  Should we remove the
-   Unassigned and Reserved rows?  Should we convert the numbers to hex?
+   The existing entries are left unchanged.
 
 4.5.  Network Time Security Next Protocols
 
@@ -408,8 +407,7 @@ Table of Contents
       are reserved for experimentation and development.  IANA cannot
       assign them.
 
-   The existing entries are left unchanged.  Should we remove the
-   Unassigned and Reserved rows?  Should we convert the numbers to hex?
+   The existing entries are left unchanged.
 
 4.6.  Network Time Security Error Codes
 
@@ -421,8 +419,7 @@ Table of Contents
       are reserved for experimentation and development.  IANA cannot
       assign them.
 
-   The existing entries are left unchanged.  Should we remove the
-   Unassigned and Reserved rows?
+   The existing entries are left unchanged.
 
 4.7.  Network Time Security Warning Codes
 
@@ -434,8 +431,7 @@ Table of Contents
       inclusive, are reserved for experimentation and development.  IANA
       cannot assign them.
 
-   The existing entries are left unchanged.  Should we remove the
-   Unassigned and Reserved rows?  Can IANA handle an empty table?
+   The existing entries are left unchanged.
 
 5.  Acknowledgements
 
@@ -447,6 +443,8 @@ Table of Contents
    *  Daniel Franke, Akamai Technologies
 
    *  Danny Mayer, Network Time Foundation
+
+   *  Michelle Cotton, IANA
 
    And thanks to Harlen Stenn for providing popcorn.
 
