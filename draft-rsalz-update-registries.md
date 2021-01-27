@@ -41,7 +41,7 @@ Some registries have wrong values, some registries
 do not follow current common practice, and some are just right.
 For the sake of completeness, this document reviews all NTP and NTS registries.
 
-The bulk of this document can be divded into two parts:
+The bulk of this document can be divided into two parts:
 
 - First, each registry, its defining document, and a summary of its
 syntax is defined.
@@ -59,8 +59,9 @@ is not described here.
 ## Reference ID, Kiss-o'-Death
 
 {{!RFC5905}} defined two registries, the Reference ID in Section 7.3, and the
-Kiss-o'-Death in Section 7.4.  Both of these are four ASCII characters, left
-justified and padded with zero's.  Entries that start with 0x58, the ASCII
+Kiss-o'-Death in Section 7.4.  Both of these are allowed to be four ASCII
+characters; padded on the right with all-bits-zero if necessary.
+Entries that start with 0x58, the ASCII
 letter uppercase X, are reserved for private experimentation and development.
 Both registries are first-come first-served. The formal request to define
 the registries is in Section 16.
@@ -88,14 +89,14 @@ around the interaction with the Message Authentication Code (MAC) field.
 The following problems exists with the current registry:
 
 - Many of the entries in the Extension Field Types registry have
-swapped some of the nibbles; 1234 is listed as 1432 for example.
+swapped some of the nibbles; 0x1234 is listed as 0x1432 for example.
 This document marks the erroneous values as reserved.
 - Some values were mistakenly re-used.
 
 ## Network Time Security Registries
 
 {{!RFC8915}} defines the Network Time Security (NTS) protocol.
-Sections 7.1 through 7.5 (inclusive) added entries to existing regisries.
+Sections 7.1 through 7.5 (inclusive) added entries to existing registries.
 
 Section 7.6 created a new registry, NTS Key Establishment Record Types,
 that partitions the assigned numbers into three different registration
@@ -105,7 +106,7 @@ Section 7.7 created a new registry, NTS Next Protocols,
 that similarly partitions the assigned numbers.
 
 Section 7.8 created two new registries, NTS Error Codes and NTS Warning Codes.
-Both regisries are also partitioned the same way.
+Both registries are also partitioned the same way.
 
 # New Registries
 
@@ -114,7 +115,8 @@ The following general guidelines apply to all registries defined here:
 - Every entry reserves a partition for private use and experimentation.
 
 - Registries with ASCII fields are now limited to uppercase letters; fields
-starting with 0x2D, the ASCII minus sign, are reserved for private use.
+starting with 0x2D, the ASCII minus sign, are reserved for private use
+and experimentation.
 
 - The policy for every registry is now specification required, as defined
 in Section 4.6 of {{!RFC8126}}.
@@ -265,8 +267,6 @@ The following note should be added:
 are reserved for experimentation and development. IANA cannot assign them.
 
 The existing entries are left unchanged.
-Should we remove the Unassigned and Reserved rows?
-Should we convert the numbers to hex?
 
 ## Network Time Security Next Protocols
 
@@ -278,8 +278,6 @@ The following note should be added:
 are reserved for experimentation and development. IANA cannot assign them.
 
 The existing entries are left unchanged.
-Should we remove the Unassigned and Reserved rows?
-Should we convert the numbers to hex?
 
 ## Network Time Security Error Codes
 
@@ -291,7 +289,6 @@ The following note should be added:
 are reserved for experimentation and development. IANA cannot assign them.
 
 The existing entries are left unchanged.
-Should we remove the Unassigned and Reserved rows?
 
 ## Network Time Security Warning Codes
 
@@ -303,8 +300,6 @@ The following note should be added:
 are reserved for experimentation and development. IANA cannot assign them.
 
 The existing entries are left unchanged.
-Should we remove the Unassigned and Reserved rows?
-Can IANA handle an empty table?
 
 # Acknowledgements
 
@@ -314,5 +309,6 @@ Notable contributors include.
 * Miroslav Lichvar, RedHat
 * Daniel Franke, Akamai Technologies
 * Danny Mayer, Network Time Foundation
+* Michelle Cotton, IANA
 
 And thanks to Harlen Stenn for providing popcorn.
