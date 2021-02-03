@@ -4,8 +4,8 @@
 
 ntp                                                              R. Salz
 Internet-Draft                                       Akamai Technologies
-Intended status: Informational                           27 January 2021
-Expires: 31 July 2021
+Intended status: Informational                           3 February 2021
+Expires: 7 August 2021
 
 
                       The update registries draft
@@ -42,7 +42,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 31 July 2021.
+   This Internet-Draft will expire on 7 August 2021.
 
 Copyright Notice
 
@@ -66,7 +66,7 @@ Table of Contents
      2.2.  Extension Field Types
      2.3.  Network Time Security Registries
    3.  New Registries
-   4.  IANA Consideration
+   4.  IANA Considerations
      4.1.  NTP Reference Identifier Codes
      4.2.  NTP Kiss-o'-Death Codes
      4.3.  NTP Extension Field Types
@@ -180,7 +180,7 @@ Table of Contents
    Each entry described in the below sub-sections is intended to
    completely replace the existing entry with the same name.
 
-4.  IANA Consideration
+4.  IANA Considerations
 
 4.1.  NTP Reference Identifier Codes
 
