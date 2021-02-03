@@ -127,7 +127,7 @@ required to approve a registry change.
 Each entry described in the below sub-sections is intended to completely
 replace the existing entry with the same name.
 
-# IANA Consideration
+# IANA Considerations
 
 ## NTP Reference Identifier Codes
 
