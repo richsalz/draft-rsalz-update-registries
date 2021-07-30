@@ -1,5 +1,5 @@
 ---
-docname: draft-rsalz-update-registries-latest
+docname: draft-ietf-ntp-update-registries-latest
 title: The update registries draft
 category: info
 workgroup: ntp
