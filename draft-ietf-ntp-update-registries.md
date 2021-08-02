@@ -1,6 +1,6 @@
 ---
 docname: draft-ietf-ntp-update-registries-latest
-title: The update registries draft
+title: Updating the NTP Registries
 category: info
 workgroup: ntp
 ipr: trust200902
