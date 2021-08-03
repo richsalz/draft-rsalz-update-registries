@@ -306,9 +306,7 @@ The existing entries are left unchanged.
 The members of the NTP Working Group helped a great deal.
 Notable contributors include.
 
-* Miroslav Lichvar, RedHat
+* Miroslav Lichvar, Red Hat
 * Daniel Franke, Akamai Technologies
 * Danny Mayer, Network Time Foundation
 * Michelle Cotton, IANA
-
-And thanks to Harlen Stenn for providing popcorn.
