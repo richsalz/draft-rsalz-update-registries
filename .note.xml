@@ -2,3 +2,8 @@
 <t>Source for this draft and an issue tracker can be found at
   <eref target="https://github.com/richsalz/draft-rsalz-update-registries"/>.</t>
 </note>
+
+<note title="RFC Editor:" removeInRFC="true">
+  <t> Please update 'this RFC' to refer to this document,
+    once its RFC number is known, through the document.</t>
+</note>

@@ -1,5 +1,6 @@
 ---
 docname: draft-ietf-ntp-update-registries-latest
+updates: 5905, 5906, 8573, 7822, 7821
 title: Updating the NTP Registries
 category: info
 workgroup: ntp
@@ -20,6 +21,14 @@ author:
     name: Rich Salz
     org: Akamai Technologies
     email: rsalz@akamai.com
+normative:
+  RFC5905: RFC5905
+  RFC5906: RFC5906
+  RFC7821: RFC7821
+  RFC7822: RFC7822
+  RFC8126: RFC8126
+  RFC8573: RFC8573
+  RFC8915: RFC8915
 
 --- abstract
 
@@ -45,7 +54,8 @@ The bulk of this document can be divided into two parts:
 
 - First, each registry, its defining document, and a summary of its
 syntax is defined.
-- Second, the revised format and entries for each registry are defined.
+- Second, the revised format and entries for each registry that is
+being modified is specified.
 
 # Existing Registries
 
@@ -58,7 +68,7 @@ is not described here.
 
 ## Reference ID, Kiss-o'-Death
 
-{{!RFC5905}} defined two registries, the Reference ID in Section 7.3, and the
+{{RFC5905}} defined two registries; the Reference ID in Section 7.3, and the
 Kiss-o'-Death in Section 7.4.  Both of these are allowed to be four ASCII
 characters; padded on the right with all-bits-zero if necessary.
 Entries that start with 0x58, the ASCII
@@ -66,25 +76,26 @@ letter uppercase X, are reserved for private experimentation and development.
 Both registries are first-come first-served. The formal request to define
 the registries is in Section 16.
 
-Section 7.5 of {{!RFC5905}} defined the on-the-wire format of extension
+{{RFC5905, Section 7.5}} defined the on-the-wire format of extension
 fields but did not create a registry for it.
 
 ## Extension Field Types
 
-{{!RFC5906}} mentioned the Extension Field Types registry, and defined it
+{{RFC5906}} mentioned the Extension Field Types registry, and defined it
 indirectly by defining 30 extensions (15 each for request and response)
 in Section 13.
 It did not provide a formal definition of the columns in the registry.
-Section 10 of {{!RFC5906}} splits the Field Type into four subfields,
+{{RFC5906, Section 10}} splits the Field Type into four subfields,
 only for use within the Autokey extensions.
 
-{{!RFC7821}} added a new entry, Checksum Complement, to the Extension
+{{RFC7821}} added a new entry, Checksum Complement, to the Extension
 Field Types registry.
 
-{{!RFC7822}} clarified the processing rules for Extension Field Types, particularly
-around the interaction with the Message Authentication Code (MAC) field.
+{{RFC7822}} clarified the processing rules for Extension Field Types,
+particularly around the interaction with the Message Authentication Code
+(MAC) field.
 
-{{!RFC8573}} changed the cryptography used in the MAC field.
+{{RFC8573}} changed the cryptography used in the MAC field.
 
 The following problems exists with the current registry:
 
@@ -95,7 +106,10 @@ This document marks the erroneous values as reserved.
 
 ## Network Time Security Registries
 
-{{!RFC8915}} defines the Network Time Security (NTS) protocol.
+{{RFC8915}} defines the NTS protocol.
+Its registries are listed here for completeness, but no changes
+to them are specified in this document.
+
 Sections 7.1 through 7.5 (inclusive) added entries to existing registries.
 
 Section 7.6 created a new registry, NTS Key Establishment Record Types,
@@ -108,9 +122,9 @@ that similarly partitions the assigned numbers.
 Section 7.8 created two new registries, NTS Error Codes and NTS Warning Codes.
 Both registries are also partitioned the same way.
 
-# New Registries
+# Updated Registries
 
-The following general guidelines apply to all registries defined here:
+The following general guidelines apply to all registries updated here:
 
 - Every entry reserves a partition for private use and experimentation.
 
@@ -118,8 +132,8 @@ The following general guidelines apply to all registries defined here:
 starting with 0x2D, the ASCII minus sign, are reserved for private use
 and experimentation.
 
-- The policy for every registry is now specification required, as defined
-in Section 4.6 of {{!RFC8126}}.
+- The policy for every registry is now Specification Required, as defined
+in {{RFC8126, Section 4.6}}.
 
 The IESG is requested to choose three designated experts, with two being
 required to approve a registry change.
@@ -131,7 +145,7 @@ replace the existing entry with the same name.
 
 ## NTP Reference Identifier Codes
 
-The registration procedure is changed to specification required.
+The registration procedure is changed to Specification Required.
 
 The Note is changed to read as follows:
 
@@ -151,7 +165,7 @@ The existing entries are left unchanged.
 
 ## NTP Kiss-o'-Death Codes
 
-The registration procedure is changed to specification required.
+The registration procedure is changed to Specification Required.
 
 The Note is changed to read as follows:
 
@@ -171,9 +185,9 @@ The existing entries are left unchanged.
 
 ## NTP Extension Field Types
 
-The registration procedure is changed to specification required.
+The registration procedure is changed to Specification Required.
 
-The reference should be {{!RFC5906}} added, if possible.
+The reference should be {{RFC5906}} added, if possible.
 
 The following Note is added:
 
@@ -209,7 +223,7 @@ The table is replaced with the following entries.
 | 0x0207     | IFF Identity Message Request        | RFC 5906  |
 | 0x0208     | GQ Identity Message Request         | RFC 5906  |
 | 0x0209     | MV Identity Message Request         | RFC 5906  |
-| 0x0302     | Reserved for historic reasons       | This RFC  |
+  0x0302     | Reserved for historic reasons       | This RFC  |
 | 0x0304     | NTS Cookie Placeholder              | RFC 8915, Section 5.5 |
 | 0x0402     | Reserved for historic reasons       | This RFC  |
 | 0x0404     | NTS Authenticator and Encrypted Extension Fields | RFC 8915, Section 5.6 |
@@ -256,50 +270,6 @@ The table is replaced with the following entries.
 | 0x0902     | Reserved for historic reasons       | This RFC  |
 | 0x8902     | Reserved for historic reasons       | This RFC  |
 | 0xC902     | Reserved for historic reasons       | This RFC  |
-
-## Network Time Security Key Establishment Record Types
-
-The registration procedure is changed to specification required.
-
-The following note should be added:
-
-- Record Type numbers in the range 0x4000 through 0x7FFF, inclusive,
-are reserved for experimentation and development. IANA cannot assign them.
-
-The existing entries are left unchanged.
-
-## Network Time Security Next Protocols
-
-The registration procedure is changed to specification required.
-
-The following note should be added:
-
-- Protocol ID numbers in the range 0x8000 through 0xFFFF, inclusive,
-are reserved for experimentation and development. IANA cannot assign them.
-
-The existing entries are left unchanged.
-
-## Network Time Security Error Codes
-
-The registration procedure is changed to specification required.
-
-The following note should be added:
-
-- Error code numbers in the range 0x8000 through 0xFFFF, inclusive,
-are reserved for experimentation and development. IANA cannot assign them.
-
-The existing entries are left unchanged.
-
-## Network Time Security Warning Codes
-
-The registration procedure is changed to specification required.
-
-The following note should be added:
-
-- Warning code numbers in the range 0x8000 through 0xFFFF, inclusive,
-are reserved for experimentation and development. IANA cannot assign them.
-
-The existing entries are left unchanged.
 
 # Acknowledgements
 
