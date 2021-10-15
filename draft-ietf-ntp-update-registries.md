@@ -39,6 +39,9 @@ Some registries have wrong values, some registries
 do not follow current common practice, and some are just right.
 For the sake of completeness, this document reviews all NTP and NTS registries.
 
+This document updates RFC 5905, RFC 5906, RFC 8573, RFC 7822, and
+RFC 7821.
+
 --- middle
 
 # Introduction
@@ -72,7 +75,7 @@ is not described here.
 Kiss-o'-Death in Section 7.4.  Both of these are allowed to be four ASCII
 characters; padded on the right with all-bits-zero if necessary.
 Entries that start with 0x58, the ASCII
-letter uppercase X, are reserved for private experimentation and development.
+letter uppercase X, are reserved for Private or Experimental Use.
 Both registries are first-come first-served. The formal request to define
 the registries is in Section 16.
 
@@ -126,11 +129,11 @@ Both registries are also partitioned the same way.
 
 The following general guidelines apply to all registries updated here:
 
-- Every entry reserves a partition for private use and experimentation.
+- Every entry reserves a partition for Private or Experimentatal Use.
 
 - Registries with ASCII fields are now limited to uppercase letters; fields
-starting with 0x2D, the ASCII minus sign, are reserved for private use
-and experimentation.
+starting with 0x2D, the ASCII minus sign, are reserved for Private or
+Experimental Use..
 
 - The policy for every registry is now Specification Required, as defined
 in {{RFC8126, Section 4.6}}.
