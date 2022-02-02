@@ -67,7 +67,7 @@ It is intended to be a short summary of the syntax and registration
 requirements for each registry.
 The semantics and protocol processing rules for each registry -- that is,
 how an implementation acts when sending or receiving any of the fields --
-is not described here.
+are not described here.
 
 ## Reference ID, Kiss-o'-Death
 
