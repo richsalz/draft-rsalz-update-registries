@@ -277,7 +277,7 @@ The table is replaced with the following entries.
 # Acknowledgements
 
 The members of the NTP Working Group helped a great deal.
-Notable contributors include.
+Notable contributors include:
 
 * Miroslav Lichvar, Red Hat
 * Daniel Franke, Akamai Technologies
