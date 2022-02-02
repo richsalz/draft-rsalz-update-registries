@@ -141,7 +141,7 @@ in {{RFC8126, Section 4.6}}.
 The IESG is requested to choose three designated experts, with two being
 required to approve a registry change.
 
-Each entry described in the below sub-sections is intended to completely
+Each entry described in the sub-sections below is intended to completely
 replace the existing entry with the same name.
 
 # IANA Considerations
