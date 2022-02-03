@@ -36,7 +36,7 @@ The Network Time Protocol (NTP) and Network Time Security (NTS) documents
 define a number of assigned number registries, collectively called the NTP
 registries.
 Some registries have wrong values, some registries
-do not follow current common practice, and some are accurate.
+do not follow current common practice, and some are just right.
 For the sake of completeness, this document reviews all NTP and NTS registries.
 
 This document updates RFC 5905, RFC 5906, RFC 8573, RFC 7822, and
@@ -50,7 +50,7 @@ The Network Time Protocol (NTP) and Network Time Security (NTS) documents
 define a number of assigned number registries, collectively called the NTP
 registries.
 Some registries have wrong values, some registries
-do not follow current common practice, and some are accurate.
+do not follow current common practice, and some are just right.
 For the sake of completeness, this document reviews all NTP and NTS registries.
 
 The bulk of this document can be divided into two parts:
