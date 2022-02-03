@@ -36,7 +36,7 @@ The Network Time Protocol (NTP) and Network Time Security (NTS) documents
 define a number of assigned number registries, collectively called the NTP
 registries.
 Some registries have wrong values, some registries
-do not follow current common practice, and some are just right.
+do not follow current common practice, and some are accurate.
 For the sake of completeness, this document reviews all NTP and NTS registries.
 
 This document updates RFC 5905, RFC 5906, RFC 8573, RFC 7822, and
@@ -50,7 +50,7 @@ The Network Time Protocol (NTP) and Network Time Security (NTS) documents
 define a number of assigned number registries, collectively called the NTP
 registries.
 Some registries have wrong values, some registries
-do not follow current common practice, and some are just right.
+do not follow current common practice, and some are accurate.
 For the sake of completeness, this document reviews all NTP and NTS registries.
 
 The bulk of this document can be divided into two parts:
@@ -67,7 +67,7 @@ It is intended to be a short summary of the syntax and registration
 requirements for each registry.
 The semantics and protocol processing rules for each registry -- that is,
 how an implementation acts when sending or receiving any of the fields --
-is not described here.
+are not described here.
 
 ## Reference ID, Kiss-o'-Death
 
@@ -141,7 +141,7 @@ in {{RFC8126, Section 4.6}}.
 The IESG is requested to choose three designated experts, with two being
 required to approve a registry change.
 
-Each entry described in the below sub-sections is intended to completely
+Each entry described in the sub-sections below is intended to completely
 replace the existing entry with the same name.
 
 # IANA Considerations
@@ -157,7 +157,7 @@ and development. IANA cannot assign them.
 
 The columns are defined as follows:
 
-- ID (required): a four-byte value padded on the right with zero's.
+- ID (required): a four-byte value padded on the right with zeros.
 Each value must be an ASCII uppercase letter or minus sign
 
 - Clock source (required): A brief text description of the ID
@@ -177,7 +177,7 @@ and development. IANA cannot assign them.
 
 The columns are defined as follows:
 
-- ID (required): a four-byte value padded on the right with zero's.
+- ID (required): a four-byte value padded on the right with zeros.
 Each value must be an ASCII uppercase letter or minus sign.
 
 - Meaning source (required): A brief text description of the ID.
@@ -277,7 +277,7 @@ The table is replaced with the following entries.
 # Acknowledgements
 
 The members of the NTP Working Group helped a great deal.
-Notable contributors include.
+Notable contributors include:
 
 * Miroslav Lichvar, Red Hat
 * Daniel Franke, Akamai Technologies
