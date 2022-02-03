@@ -104,6 +104,8 @@ The following problems exists with the current registry:
 
 - Many of the entries in the Extension Field Types registry have
 swapped some of the nibbles; 0x1234 is listed as 0x1432 for example.
+This was due to documentation errors with the original implementation
+of Autokey.
 This document marks the erroneous values as reserved.
 - Some values were mistakenly re-used.
 
