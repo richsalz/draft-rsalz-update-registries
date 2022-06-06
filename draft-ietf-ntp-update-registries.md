@@ -85,7 +85,8 @@ fields but did not create a registry for it.
 ## Extension Field Types
 
 {{RFC5906}} mentioned the Extension Field Types registry, and defined it
-indirectly by defining 30 extensions (15 each for request and response)
+indirectly by defining 30 extensions (10 each for request, response, and
+error response)
 in Section 13.
 It did not provide a formal definition of the columns in the registry.
 {{RFC5906, Section 10}} splits the Field Type into four subfields,
@@ -106,7 +107,8 @@ The following problems exists with the current registry:
 swapped some of the nibbles; 0x1234 is listed as 0x1432 for example.
 This was due to documentation errors with the original implementation
 of Autokey.
-This document marks the erroneous values as reserved.
+This document marks the erroneous values as reserved, in case there is an implementation that used the registered values
+instead of what the original implementation used.
 - Some values were mistakenly re-used.
 
 ## Network Time Security Registries
