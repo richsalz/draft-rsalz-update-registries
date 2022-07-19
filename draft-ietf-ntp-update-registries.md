@@ -2,7 +2,8 @@
 docname: draft-ietf-ntp-update-registries-latest
 updates: 5905, 5906, 8573, 7822, 7821
 title: Updating the NTP Registries
-category: info
+category: std
+stream: IETF
 workgroup: ntp
 ipr: trust200902
 
