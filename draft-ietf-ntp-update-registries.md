@@ -85,10 +85,9 @@ fields but did not create a registry for it.
 
 ## Extension Field Types
 
-{{RFC5906}} mentioned the Extension Field Types registry, and defined it
+{{RFC5906, Section 13}} mentioned the Extension Field Types registry, and defined it
 indirectly by defining 30 extensions (10 each for request, response, and
-error response)
-in Section 13.
+error response).
 It did not provide a formal definition of the columns in the registry.
 {{RFC5906, Section 10}} splits the Field Type into four subfields,
 only for use within the Autokey extensions.
@@ -108,7 +107,8 @@ The following problems exists with the current registry:
 swapped some of the nibbles; 0x1234 is listed as 0x1432 for example.
 This was due to documentation errors with the original implementation
 of Autokey.
-This document marks the erroneous values as reserved, in case there is an implementation that used the registered values
+This document marks the erroneous values as reserved, in case there
+is an implementation that used the registered values
 instead of what the original implementation used.
 - Some values were mistakenly re-used.
 
@@ -138,7 +138,7 @@ The following general guidelines apply to all registries updated here:
 
 - Registries with ASCII fields are now limited to uppercase letters; fields
 starting with 0x2D, the ASCII minus sign, are reserved for Private or
-Experimental Use..
+Experimental Use.
 
 - The policy for every registry is now Specification Required, as defined
 in {{RFC8126, Section 4.6}}.
@@ -195,15 +195,21 @@ The existing entries are left unchanged.
 
 The registration procedure is changed to Specification Required.
 
-The reference should be {{RFC5906}} added, if possible.
+The reference {{RFC5906}} should be added, if possible.
 
-The following Note is added:
+The following two Notes should be added:
 
 - Field Types in the range 0xF000 through 0xFFFF, inclusive, are reserved
 for experimentation and development. IANA cannot assign them.
 Both NTS Cookie and Autokey Message Request have the same Field Type;
 in practice this is not a problem as the field semantics will be
 determined by other parts of the message.
+
+- The "Reserved for historic reasons" is for differences between the
+original documentation and implementation of Autokey and marks
+the erroneous values as reserved, in case there is an implementation
+that used the registered values instead of what the original
+implementation used.
 
 The columns are defined as follows:
 
@@ -238,7 +244,7 @@ The table is replaced with the following entries.
 | 0x0502     | Reserved for historic reasons       | This RFC  |
 | 0x0602     | Reserved for historic reasons       | This RFC  |
 | 0x0702     | Reserved for historic reasons       | This RFC  |
-| 0x2005     | Reserved for historic reasons       | This RFC  |
+| 0x2005     | UDP Checksum Complete               | RFC 7821  |
 | 0x8002     | Reserved for historic reasons       | This RFC  |
 | 0x8102     | Reserved for historic reasons       | This RFC  |
 | 0x8200     | No-Operation Response               | RFC 5906  |
@@ -287,4 +293,4 @@ Notable contributors include:
 * Miroslav Lichvar, Red Hat
 * Daniel Franke, Akamai Technologies
 * Danny Mayer, Network Time Foundation
-* Michelle Cotton, IANA
+* Michelle Cotton, formerly at IANA
