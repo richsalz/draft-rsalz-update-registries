@@ -134,9 +134,9 @@ Both registries are also partitioned the same way.
 
 The following general guidelines apply to all registries updated here:
 
-- Every entry reserves a partition for Private or Experimentatal Use.
+- Every registry reserves a partition for Private or Experimentatal Use.
 
-- Registries with ASCII fields are now limited to uppercase letters; fields
+- Entries with ASCII fields are now limited to uppercase letters; fields
 starting with 0x2D, the ASCII minus sign, are reserved for Private or
 Experimental Use.
 
