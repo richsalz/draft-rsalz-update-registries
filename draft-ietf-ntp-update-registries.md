@@ -197,7 +197,7 @@ The registration procedure is changed to Specification Required.
 
 The reference {{RFC5906}} should be added, if possible.
 
-The following two Notes should be added:
+The following two Notes are added:
 
 - Field Types in the range 0xF000 through 0xFFFF, inclusive, are reserved
 for experimentation and development. IANA cannot assign them.
