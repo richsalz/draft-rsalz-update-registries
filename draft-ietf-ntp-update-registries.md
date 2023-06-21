@@ -38,7 +38,8 @@ define a number of assigned number registries, collectively called the NTP
 registries.
 Some registries have wrong values, some registries
 do not follow current common practice, and some are just right.
-For the sake of completeness, this document reviews all NTP and NTS registries.
+For the sake of completeness, this document reviews all NTP and NTS registries,
+and makes updates where necessary.
 
 This document updates RFC 5905, RFC 5906, RFC 8573, RFC 7822, and
 RFC 7821.
@@ -52,7 +53,8 @@ define a number of assigned number registries, collectively called the NTP
 registries.
 Some registries have wrong values, some registries
 do not follow current common practice, and some are just right.
-For the sake of completeness, this document reviews all NTP and NTS registries.
+For the sake of completeness, this document reviews all NTP and NTS registries,
+and makes updates where necessary.
 
 The bulk of this document can be divided into two parts:
 
@@ -80,10 +82,10 @@ letter uppercase X, are reserved for Private or Experimental Use.
 Both registries are first-come first-served. The formal request to define
 the registries is in Section 16.
 
-{{RFC5905, Section 7.5}} defined the on-the-wire format of extension
-fields but did not create a registry for it.
-
 ## Extension Field Types
+
+{{RFC5905, Section 7.5}} defined the on-the-wire format of extension
+fields but did not create a registry for them.
 
 {{RFC5906, Section 13}} mentioned the Extension Field Types registry, and defined it
 indirectly by defining 30 extensions (10 each for request, response, and
@@ -143,11 +145,30 @@ Experimental Use.
 - The policy for every registry is now Specification Required, as defined
 in {{RFC8126, Section 4.6}}.
 
+Note that the second bullet removes the restrictions on fields
+starting with the 0x58, the ASCII uppercase letter X.
+
 The IESG is requested to choose three designated experts, with two being
-required to approve a registry change.
+required to approve a registry change. Guidance for such experts is
+given below.
 
 Each entry described in the sub-sections below is intended to completely
 replace the existing entry with the same name.
+
+## Guidance to Designated Experts
+
+The designated experts (DE) should be familiar with {{RFC8126}}, particularly
+Section 5. As that reference suggests, the DE should ascertain the existence
+of a suitable specification, and verify that it is publicly available. The DE
+is also expected to check the clarity of purpose and use of the requested
+code points.
+
+In addition, the DE is expected to be familiar with this document,
+specifically the history documented here. If reviewing a request to allocate
+a field value previously reserved for private or experimental use, but
+reallocated per this document, it is RECOMMENDED to seek the feedback of the
+NTP community via any of the regular working group participation mechanisms,
+such as by posting to the working group's mailing list.
 
 # IANA Considerations
 
