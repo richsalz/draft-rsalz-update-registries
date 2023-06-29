@@ -76,7 +76,7 @@ are not described here.
 
 {{RFC5905}} defined two registries; the Reference ID in Section 7.3, and the
 Kiss-o'-Death in Section 7.4.  Both of these are allowed to be four ASCII
-characters; padded on the right with all-bits-zero if necessary.
+characters, left-justified and zero-padded if necessary.
 Entries that start with 0x58, the ASCII
 letter uppercase X, are reserved for Private or Experimental Use.
 Both registries are first-come first-served. The formal request to define
@@ -183,7 +183,8 @@ and development. IANA cannot assign them.
 
 The columns are defined as follows:
 
-- ID (required): a four-byte value padded on the right with zeros.
+- ID (required): a four-byte value padded on the right with all-bytes zero
+if necessary.
 Each value must be an ASCII uppercase letter or minus sign
 
 - Clock source (required): A brief text description of the ID
@@ -203,7 +204,8 @@ and development. IANA cannot assign them.
 
 The columns are defined as follows:
 
-- ID (required): a four-byte value padded on the right with zeros.
+- ID (required): a four-byte value padded on the right with all-bytes zero
+if necessary.
 Each value must be an ASCII uppercase letter or minus sign.
 
 - Meaning source (required): A brief text description of the ID.
