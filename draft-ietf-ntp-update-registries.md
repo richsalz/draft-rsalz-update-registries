@@ -183,7 +183,7 @@ and development. IANA cannot assign them.
 
 The columns are defined as follows:
 
-- ID (required): a four-byte value padded on the right with all-bytes zero
+- ID (required): a four-byte value padded on the right with all zero bytes
 if necessary.
 Each value must be an ASCII uppercase letter or minus sign
 
@@ -204,7 +204,7 @@ and development. IANA cannot assign them.
 
 The columns are defined as follows:
 
-- ID (required): a four-byte value padded on the right with all-bytes zero
+- ID (required): a four-byte value padded on the right with all zero bytes
 if necessary.
 Each value must be an ASCII uppercase letter or minus sign.
 
