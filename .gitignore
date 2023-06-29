@@ -14,3 +14,4 @@ report.xml
 venv/
 lib
 draft-rsalz-update-registries.xml
+versioned/
