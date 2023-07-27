@@ -76,7 +76,7 @@ are not described here.
 
 {{RFC5905}} defined two registries; the Reference ID in Section 7.3, and the
 Kiss-o'-Death in Section 7.4.  Both of these are allowed to be four ASCII
-characters; padded on the right with all-bits-zero if necessary.
+characters, left-justified and zero-padded if necessary.
 Entries that start with 0x58, the ASCII
 letter uppercase X, are reserved for Private or Experimental Use.
 Both registries are first-come first-served. The formal request to define
@@ -158,12 +158,12 @@ replace the existing entry with the same name.
 ## Guidance to Designated Experts
 
 The designated experts (DE) should be familiar with {{RFC8126}}, particularly
-Section 5. As that reference suggests, the DE should ascertain the existence
-of a suitable specification, and verify that it is publicly available. The DE
-is also expected to check the clarity of purpose and use of the requested
+Section 5. As that reference suggests, they should ascertain the existence
+of a suitable specification, and verify that it is publicly available. They
+are also expected to check the clarity of purpose and use of the requested
 code points.
 
-In addition, the DE is expected to be familiar with this document,
+In addition, Designated Experts are expected to be familiar with this document,
 specifically the history documented here. If reviewing a request to allocate
 a field value previously reserved for private or experimental use, but
 reallocated per this document, it is RECOMMENDED to seek the feedback of the
@@ -183,7 +183,8 @@ and development. IANA cannot assign them.
 
 The columns are defined as follows:
 
-- ID (required): a four-byte value padded on the right with zeros.
+- ID (required): a four-byte value padded on the right with all zero bytes
+if necessary.
 Each value must be an ASCII uppercase letter or minus sign
 
 - Clock source (required): A brief text description of the ID
@@ -203,7 +204,8 @@ and development. IANA cannot assign them.
 
 The columns are defined as follows:
 
-- ID (required): a four-byte value padded on the right with zeros.
+- ID (required): a four-byte value padded on the right with all zero bytes
+if necessary.
 Each value must be an ASCII uppercase letter or minus sign.
 
 - Meaning source (required): A brief text description of the ID.
