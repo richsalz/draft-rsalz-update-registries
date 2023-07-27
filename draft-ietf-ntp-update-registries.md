@@ -158,12 +158,12 @@ replace the existing entry with the same name.
 ## Guidance to Designated Experts
 
 The designated experts (DE) should be familiar with {{RFC8126}}, particularly
-Section 5. As that reference suggests, the DE should ascertain the existence
-of a suitable specification, and verify that it is publicly available. The DE
-is also expected to check the clarity of purpose and use of the requested
+Section 5. As that reference suggests, they should ascertain the existence
+of a suitable specification, and verify that it is publicly available. They
+are also expected to check the clarity of purpose and use of the requested
 code points.
 
-In addition, the DE is expected to be familiar with this document,
+In addition, Designated Experts are expected to be familiar with this document,
 specifically the history documented here. If reviewing a request to allocate
 a field value previously reserved for private or experimental use, but
 reallocated per this document, it is RECOMMENDED to seek the feedback of the
