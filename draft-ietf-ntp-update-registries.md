@@ -265,7 +265,7 @@ The table is replaced with the following entries.
 | 0x0502     | Reserved for historic reasons       | This RFC  |
 | 0x0602     | Reserved for historic reasons       | This RFC  |
 | 0x0702     | Reserved for historic reasons       | This RFC  |
-| 0x2005     | UDP Checksum Complete               | RFC 7821  |
+| 0x2005     | UDP Checksum Complement             | RFC 7821  |
 | 0x8002     | Reserved for historic reasons       | This RFC  |
 | 0x8102     | Reserved for historic reasons       | This RFC  |
 | 0x8200     | No-Operation Response               | RFC 5906  |
