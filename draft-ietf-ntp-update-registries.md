@@ -103,6 +103,8 @@ particularly around the interaction with the Message Authentication Code
 
 {{RFC8573}} changed the cryptography used in the MAC field.
 
+{{RFC8915}} added four new entries to the Extension Field Types registry.
+
 The following problems exists with the current registry:
 
 - Many of the entries in the Extension Field Types registry have
@@ -258,7 +260,7 @@ The table is replaced with the following entries.
 | 0x0207     | IFF Identity Message Request        | RFC 5906  |
 | 0x0208     | GQ Identity Message Request         | RFC 5906  |
 | 0x0209     | MV Identity Message Request         | RFC 5906  |
-  0x0302     | Reserved for historic reasons       | This RFC  |
+| 0x0302     | Reserved for historic reasons       | This RFC  |
 | 0x0304     | NTS Cookie Placeholder              | RFC 8915, Section 5.5 |
 | 0x0402     | Reserved for historic reasons       | This RFC  |
 | 0x0404     | NTS Authenticator and Encrypted Extension Fields | RFC 8915, Section 5.6 |
