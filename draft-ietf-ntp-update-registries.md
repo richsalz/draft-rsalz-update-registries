@@ -141,14 +141,11 @@ The following general guidelines apply to all registries updated here:
 - Every registry reserves a partition for Private or Experimental Use.
 
 - Entries with ASCII fields are now limited to uppercase letters; fields
-starting with 0x2D, the ASCII minus sign, are reserved for Private or
+starting with 0x58, the uppercase letter "X", are reserved for Private or
 Experimental Use.
 
 - The policy for every registry is now Specification Required, as defined
 in {{RFC8126, Section 4.6}}.
-
-Note that the second bullet removes the restrictions on fields
-starting with the 0x58, the ASCII uppercase letter X.
 
 The IESG is requested to choose three designated experts, with two being
 required to approve a registry change. Guidance for such experts is
@@ -166,11 +163,7 @@ is also expected to check the clarity of purpose and use of the requested
 code points.
 
 In addition, the DE is expected to be familiar with this document,
-specifically the history documented here. If reviewing a request to allocate
-a field value previously reserved for private or experimental use, but
-reallocated per this document, it is RECOMMENDED to seek the feedback of the
-NTP community via any of the regular working group participation mechanisms,
-such as by posting to the working group's mailing list.
+specifically the history documented here.
 
 # IANA Considerations
 
@@ -180,13 +173,13 @@ The registration procedure is changed to Specification Required.
 
 The Note is changed to read as follows:
 
-- Codes beginning with the character "-" are reserved for experimentation
+- Codes beginning with the character "X" are reserved for experimentation
 and development. IANA cannot assign them.
 
 The columns are defined as follows:
 
 - ID (required): a four-byte value padded on the right with zeros.
-Each value must be an ASCII uppercase letter or minus sign
+Each byte other than padding must be an ASCII uppercase letter or minus sign
 
 - Clock source (required): A brief text description of the ID
 
@@ -200,13 +193,13 @@ The registration procedure is changed to Specification Required.
 
 The Note is changed to read as follows:
 
-- Codes beginning with the character "-" are reserved for experimentation
+- Codes beginning with the character "X" are reserved for experimentation
 and development. IANA cannot assign them.
 
 The columns are defined as follows:
 
 - ID (required): a four-byte value padded on the right with zeros.
-Each value must be an ASCII uppercase letter or minus sign.
+Each byte other than padding must be an ASCII uppercase letter or minus sign.
 
 - Meaning source (required): A brief text description of the ID.
 
