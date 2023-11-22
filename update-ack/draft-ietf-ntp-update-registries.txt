@@ -4,10 +4,10 @@
 
 ntp                                                              R. Salz
 Internet-Draft                                       Akamai Technologies
-Updates: 5905, 5906, 8573, 7822, 7821 (if                7 November 2023
+Updates: 5905, 5906, 8573, 7822, 7821 (if               22 November 2023
          approved)                                                      
 Intended status: Standards Track                                        
-Expires: 10 May 2024
+Expires: 25 May 2024
 
 
                       Updating the NTP Registries
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 May 2024.
+   This Internet-Draft will expire on 25 May 2024.
 
 Copyright Notice
 
@@ -186,14 +186,11 @@ Table of Contents
       Use.
 
    *  Entries with ASCII fields are now limited to uppercase letters;
-      fields starting with 0x2D, the ASCII minus sign, are reserved for
-      Private or Experimental Use.
+      fields starting with 0x58, the uppercase letter "X", are reserved
+      for Private or Experimental Use.
 
    *  The policy for every registry is now Specification Required, as
       defined in [RFC8126], Section 4.6.
-
-   Note that the second bullet removes the restrictions on fields
-   starting with the 0x58, the ASCII uppercase letter X.
 
    The IESG is requested to choose three designated experts, with two
    being required to approve a registry change.  Guidance for such
@@ -211,12 +208,7 @@ Table of Contents
    clarity of purpose and use of the requested code points.
 
    In addition, the DE is expected to be familiar with this document,
-   specifically the history documented here.  If reviewing a request to
-   allocate a field value previously reserved for private or
-   experimental use, but reallocated per this document, it is
-   RECOMMENDED to seek the feedback of the NTP community via any of the
-   regular working group participation mechanisms, such as by posting to
-   the working group's mailing list.
+   specifically the history documented here.
 
 4.  IANA Considerations
 
@@ -226,13 +218,14 @@ Table of Contents
 
    The Note is changed to read as follows:
 
-   *  Codes beginning with the character "-" are reserved for
+   *  Codes beginning with the character "X" are reserved for
       experimentation and development.  IANA cannot assign them.
 
    The columns are defined as follows:
 
    *  ID (required): a four-byte value padded on the right with zeros.
-      Each value must be an ASCII uppercase letter or minus sign
+      Each byte other than padding must be an ASCII uppercase letter or
+      minus sign
 
    *  Clock source (required): A brief text description of the ID
 
@@ -246,13 +239,14 @@ Table of Contents
 
    The Note is changed to read as follows:
 
-   *  Codes beginning with the character "-" are reserved for
+   *  Codes beginning with the character "X" are reserved for
       experimentation and development.  IANA cannot assign them.
 
    The columns are defined as follows:
 
    *  ID (required): a four-byte value padded on the right with zeros.
-      Each value must be an ASCII uppercase letter or minus sign.
+      Each byte other than padding must be an ASCII uppercase letter or
+      minus sign.
 
    *  Meaning source (required): A brief text description of the ID.
 

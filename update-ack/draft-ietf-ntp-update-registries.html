@@ -31,13 +31,13 @@ RFC 7821.
     intervaltree 3.1.0
     Jinja2 3.1.2
     lxml 4.9.3
-    platformdirs 3.11.0
+    platformdirs 4.0.0
     pycountry 22.3.5
     PyYAML 6.0
     requests 2.31.0
     setuptools 67.7.2
     six 1.16.0
-    wcwidth 0.2.9
+    wcwidth 0.2.10
 -->
 <link href="draft-ietf-ntp-update-registries.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1040,7 +1040,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Salz</td>
-<td class="center">Expires 10 May 2024</td>
+<td class="center">Expires 25 May 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1056,12 +1056,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc5905" class="eref">5905</a>, <a href="https://www.rfc-editor.org/rfc/rfc5906" class="eref">5906</a>, <a href="https://www.rfc-editor.org/rfc/rfc8573" class="eref">8573</a>, <a href="https://www.rfc-editor.org/rfc/rfc7822" class="eref">7822</a>, <a href="https://www.rfc-editor.org/rfc/rfc7821" class="eref">7821</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2023-11-07" class="published">7 November 2023</time>
+<time datetime="2023-11-22" class="published">22 November 2023</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-05-10">10 May 2024</time></dd>
+<dd class="expires"><time datetime="2024-05-25">25 May 2024</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1115,7 +1115,7 @@ RFC 7821.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 10 May 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 25 May 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1315,7 +1315,7 @@ Both registries are also partitioned the same way.<a href="#section-2.3-5" class
 </li>
         <li class="normal" id="section-3-2.2">
           <p id="section-3-2.2.1">Entries with ASCII fields are now limited to uppercase letters; fields
-starting with 0x2D, the ASCII minus sign, are reserved for Private or
+starting with 0x58, the uppercase letter "X", are reserved for Private or
 Experimental Use.<a href="#section-3-2.2.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="section-3-2.3">
@@ -1323,13 +1323,11 @@ Experimental Use.<a href="#section-3-2.2.1" class="pilcrow">¶</a></p>
 in <span>[<a href="#RFC8126" class="cite xref">RFC8126</a>], <a href="https://rfc-editor.org/rfc/rfc8126#section-4.6" class="relref">Section 4.6</a></span>.<a href="#section-3-2.3.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="section-3-3">Note that the second bullet removes the restrictions on fields
-starting with the 0x58, the ASCII uppercase letter X.<a href="#section-3-3" class="pilcrow">¶</a></p>
-<p id="section-3-4">The IESG is requested to choose three designated experts, with two being
+<p id="section-3-3">The IESG is requested to choose three designated experts, with two being
 required to approve a registry change. Guidance for such experts is
-given below.<a href="#section-3-4" class="pilcrow">¶</a></p>
-<p id="section-3-5">Each entry described in the sub-sections below is intended to completely
-replace the existing entry with the same name.<a href="#section-3-5" class="pilcrow">¶</a></p>
+given below.<a href="#section-3-3" class="pilcrow">¶</a></p>
+<p id="section-3-4">Each entry described in the sub-sections below is intended to completely
+replace the existing entry with the same name.<a href="#section-3-4" class="pilcrow">¶</a></p>
 <div id="guidance-to-designated-experts">
 <section id="section-3.1">
         <h3 id="name-guidance-to-designated-expe">
@@ -1341,11 +1339,7 @@ of a suitable specification, and verify that it is publicly available. The DE
 is also expected to check the clarity of purpose and use of the requested
 code points.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 <p id="section-3.1-2">In addition, the DE is expected to be familiar with this document,
-specifically the history documented here. If reviewing a request to allocate
-a field value previously reserved for private or experimental use, but
-reallocated per this document, it is RECOMMENDED to seek the feedback of the
-NTP community via any of the regular working group participation mechanisms,
-such as by posting to the working group's mailing list.<a href="#section-3.1-2" class="pilcrow">¶</a></p>
+specifically the history documented here.<a href="#section-3.1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1364,7 +1358,7 @@ such as by posting to the working group's mailing list.<a href="#section-3.1-2" 
 <p id="section-4.1-2">The Note is changed to read as follows:<a href="#section-4.1-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-4.1-3.1">
-            <p id="section-4.1-3.1.1">Codes beginning with the character "-" are reserved for experimentation
+            <p id="section-4.1-3.1.1">Codes beginning with the character "X" are reserved for experimentation
 and development. IANA cannot assign them.<a href="#section-4.1-3.1.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
@@ -1372,7 +1366,7 @@ and development. IANA cannot assign them.<a href="#section-4.1-3.1.1" class="pil
 <ul class="normal">
 <li class="normal" id="section-4.1-5.1">
             <p id="section-4.1-5.1.1">ID (required): a four-byte value padded on the right with zeros.
-Each value must be an ASCII uppercase letter or minus sign<a href="#section-4.1-5.1.1" class="pilcrow">¶</a></p>
+Each byte other than padding must be an ASCII uppercase letter or minus sign<a href="#section-4.1-5.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-4.1-5.2">
             <p id="section-4.1-5.2.1">Clock source (required): A brief text description of the ID<a href="#section-4.1-5.2.1" class="pilcrow">¶</a></p>
@@ -1393,7 +1387,7 @@ Each value must be an ASCII uppercase letter or minus sign<a href="#section-4.1-
 <p id="section-4.2-2">The Note is changed to read as follows:<a href="#section-4.2-2" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-4.2-3.1">
-            <p id="section-4.2-3.1.1">Codes beginning with the character "-" are reserved for experimentation
+            <p id="section-4.2-3.1.1">Codes beginning with the character "X" are reserved for experimentation
 and development. IANA cannot assign them.<a href="#section-4.2-3.1.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
@@ -1401,7 +1395,7 @@ and development. IANA cannot assign them.<a href="#section-4.2-3.1.1" class="pil
 <ul class="normal">
 <li class="normal" id="section-4.2-5.1">
             <p id="section-4.2-5.1.1">ID (required): a four-byte value padded on the right with zeros.
-Each value must be an ASCII uppercase letter or minus sign.<a href="#section-4.2-5.1.1" class="pilcrow">¶</a></p>
+Each byte other than padding must be an ASCII uppercase letter or minus sign.<a href="#section-4.2-5.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-4.2-5.2">
             <p id="section-4.2-5.2.1">Meaning source (required): A brief text description of the ID.<a href="#section-4.2-5.2.1" class="pilcrow">¶</a></p>
