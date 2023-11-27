@@ -178,7 +178,7 @@ and development. IANA cannot assign them.
 
 The columns are defined as follows:
 
-- ID (required): a four-byte value padded on the right with zeros.
+- ID (required): a four-byte value padded on the right with all-bits-zero.
 Each byte other than padding must be an ASCII uppercase letter or minus sign
 
 - Clock source (required): A brief text description of the ID
@@ -198,7 +198,7 @@ and development. IANA cannot assign them.
 
 The columns are defined as follows:
 
-- ID (required): a four-byte value padded on the right with zeros.
+- ID (required): a four-byte value padded on the right with all-bits-zero.
 Each byte other than padding must be an ASCII uppercase letter or minus sign.
 
 - Meaning source (required): A brief text description of the ID.
