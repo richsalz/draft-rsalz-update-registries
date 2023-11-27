@@ -140,7 +140,7 @@ The following general guidelines apply to all registries updated here:
 
 - Every registry reserves a partition for Private or Experimental Use.
 
-- Entries with ASCII fields are now limited to uppercase letters; fields
+- Entries with ASCII fields are now limited to uppercase letters or digit; fields
 starting with 0x58, the uppercase letter "X", are reserved for Private or
 Experimental Use.
 
@@ -179,9 +179,9 @@ and development. IANA cannot assign them.
 The columns are defined as follows:
 
 - ID (required): a four-byte value padded on the right with all-bits-zero.
-Each byte other than padding must be an ASCII uppercase letter or minus sign
+Each byte other than padding must be an ASCII uppercase letter or digit.
 
-- Clock source (required): A brief text description of the ID
+- Clock source (required): A brief text description of the ID.
 
 - Reference (required): the publication defining the ID.
 
@@ -199,7 +199,7 @@ and development. IANA cannot assign them.
 The columns are defined as follows:
 
 - ID (required): a four-byte value padded on the right with all-bits-zero.
-Each byte other than padding must be an ASCII uppercase letter or minus sign.
+Each byte other than padding must be an ASCII uppercase letter or digit.
 
 - Meaning source (required): A brief text description of the ID.
 
@@ -246,8 +246,8 @@ The table is replaced with the following entries.
 | 0x0201     | Association Message Request         | RFC 5906  |
 | 0x0202     | Certificate Message Request         | RFC 5906  |
 | 0x0203     | Cookie Message Request              | RFC 5906  |
-| 0x0204     | NTS Cookie                          | RFC 8915, Section 5.4 |
 | 0x0204     | Autokey Message Request             | RFC 5906  |
+| 0x0204     | NTS Cookie                          | RFC 8915, Section 5.4 |
 | 0x0205     | Leapseconds Message Request         | RFC 5906  |
 | 0x0206     | Sign Message Request                | RFC 5906  |
 | 0x0207     | IFF Identity Message Request        | RFC 5906  |
@@ -260,6 +260,7 @@ The table is replaced with the following entries.
 | 0x0502     | Reserved for historic reasons       | This RFC  |
 | 0x0602     | Reserved for historic reasons       | This RFC  |
 | 0x0702     | Reserved for historic reasons       | This RFC  |
+| 0x0902     | Reserved for historic reasons       | This RFC  |
 | 0x2005     | UDP Checksum Complement             | RFC 7821  |
 | 0x8002     | Reserved for historic reasons       | This RFC  |
 | 0x8102     | Reserved for historic reasons       | This RFC  |
@@ -279,6 +280,7 @@ The table is replaced with the following entries.
 | 0x8602     | Reserved for historic reasons       | This RFC  |
 | 0x8702     | Reserved for historic reasons       | This RFC  |
 | 0x8802     | Reserved for historic reasons       | This RFC  |
+| 0x8902     | Reserved for historic reasons       | This RFC  |
 | 0xC002     | Reserved for historic reasons       | This RFC  |
 | 0xC102     | Reserved for historic reasons       | This RFC  |
 | 0xC200     | No-Operation Error Response         | RFC 5906  |
@@ -297,8 +299,6 @@ The table is replaced with the following entries.
 | 0xC602     | Reserved for historic reasons       | This RFC  |
 | 0xC702     | Reserved for historic reasons       | This RFC  |
 | 0xC802     | Reserved for historic reasons       | This RFC  |
-| 0x0902     | Reserved for historic reasons       | This RFC  |
-| 0x8902     | Reserved for historic reasons       | This RFC  |
 | 0xC902     | Reserved for historic reasons       | This RFC  |
 
 # Acknowledgements
