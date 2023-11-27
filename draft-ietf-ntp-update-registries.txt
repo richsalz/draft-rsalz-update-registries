@@ -4,10 +4,10 @@
 
 ntp                                                              R. Salz
 Internet-Draft                                       Akamai Technologies
-Updates: 5905, 5906, 8573, 7822, 7821 (if               22 November 2023
+Updates: 5905, 5906, 8573, 7822, 7821 (if               27 November 2023
          approved)                                                      
 Intended status: Standards Track                                        
-Expires: 25 May 2024
+Expires: 30 May 2024
 
 
                       Updating the NTP Registries
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 May 2024.
+   This Internet-Draft will expire on 30 May 2024.
 
 Copyright Notice
 
@@ -185,9 +185,9 @@ Table of Contents
    *  Every registry reserves a partition for Private or Experimental
       Use.
 
-   *  Entries with ASCII fields are now limited to uppercase letters;
-      fields starting with 0x58, the uppercase letter "X", are reserved
-      for Private or Experimental Use.
+   *  Entries with ASCII fields are now limited to uppercase letters or
+      digit; fields starting with 0x58, the uppercase letter "X", are
+      reserved for Private or Experimental Use.
 
    *  The policy for every registry is now Specification Required, as
       defined in [RFC8126], Section 4.6.
@@ -223,11 +223,11 @@ Table of Contents
 
    The columns are defined as follows:
 
-   *  ID (required): a four-byte value padded on the right with zeros.
-      Each byte other than padding must be an ASCII uppercase letter or
-      minus sign
+   *  ID (required): a four-byte value padded on the right with all-
+      bits-zero.  Each byte other than padding must be an ASCII
+      uppercase letter or digit.
 
-   *  Clock source (required): A brief text description of the ID
+   *  Clock source (required): A brief text description of the ID.
 
    *  Reference (required): the publication defining the ID.
 
@@ -244,9 +244,9 @@ Table of Contents
 
    The columns are defined as follows:
 
-   *  ID (required): a four-byte value padded on the right with zeros.
-      Each byte other than padding must be an ASCII uppercase letter or
-      minus sign.
+   *  ID (required): a four-byte value padded on the right with all-
+      bits-zero.  Each byte other than padding must be an ASCII
+      uppercase letter or digit.
 
    *  Meaning source (required): A brief text description of the ID.
 
@@ -302,10 +302,10 @@ Table of Contents
        +------------+-------------------------------+-------------+
        | 0x0203     | Cookie Message Request        | RFC 5906    |
        +------------+-------------------------------+-------------+
+       | 0x0204     | Autokey Message Request       | RFC 5906    |
+       +------------+-------------------------------+-------------+
        | 0x0204     | NTS Cookie                    | RFC 8915,   |
        |            |                               | Section 5.4 |
-       +------------+-------------------------------+-------------+
-       | 0x0204     | Autokey Message Request       | RFC 5906    |
        +------------+-------------------------------+-------------+
        | 0x0205     | Leapseconds Message Request   | RFC 5906    |
        +------------+-------------------------------+-------------+
@@ -332,6 +332,8 @@ Table of Contents
        | 0x0602     | Reserved for historic reasons | This RFC    |
        +------------+-------------------------------+-------------+
        | 0x0702     | Reserved for historic reasons | This RFC    |
+       +------------+-------------------------------+-------------+
+       | 0x0902     | Reserved for historic reasons | This RFC    |
        +------------+-------------------------------+-------------+
        | 0x2005     | UDP Checksum Complement       | RFC 7821    |
        +------------+-------------------------------+-------------+
@@ -370,6 +372,8 @@ Table of Contents
        | 0x8702     | Reserved for historic reasons | This RFC    |
        +------------+-------------------------------+-------------+
        | 0x8802     | Reserved for historic reasons | This RFC    |
+       +------------+-------------------------------+-------------+
+       | 0x8902     | Reserved for historic reasons | This RFC    |
        +------------+-------------------------------+-------------+
        | 0xC002     | Reserved for historic reasons | This RFC    |
        +------------+-------------------------------+-------------+
@@ -413,10 +417,6 @@ Table of Contents
        | 0xC702     | Reserved for historic reasons | This RFC    |
        +------------+-------------------------------+-------------+
        | 0xC802     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x0902     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x8902     | Reserved for historic reasons | This RFC    |
        +------------+-------------------------------+-------------+
        | 0xC902     | Reserved for historic reasons | This RFC    |
        +------------+-------------------------------+-------------+
