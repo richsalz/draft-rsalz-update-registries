@@ -4,10 +4,10 @@
 
 ntp                                                              R. Salz
 Internet-Draft                                       Akamai Technologies
-Updates: 5905, 5906, 8573, 7822, 7821 (if               27 November 2023
+Updates: 5905, 5906, 8573, 7822, 7821 (if               28 November 2023
          approved)                                                      
 Intended status: Standards Track                                        
-Expires: 30 May 2024
+Expires: 31 May 2024
 
 
                       Updating the NTP Registries
@@ -17,10 +17,12 @@ Abstract
 
    The Network Time Protocol (NTP) and Network Time Security (NTS)
    documents define a number of assigned number registries, collectively
-   called the NTP registries.  Some registries have wrong values, some
-   registries do not follow current common practice, and some are just
-   right.  For the sake of completeness, this document reviews all NTP
-   and NTS registries, and makes updates where necessary.
+   called the NTP registries.
+
+   Some registries have wrong values, some registries do not follow
+   current common practice, and some are just right.  For the sake of
+   completeness, this document reviews all NTP and NTS registries, and
+   makes updates where necessary.
 
    This document updates RFC 5905, RFC 5906, RFC 8573, RFC 7822, and RFC
    7821.
@@ -52,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 May 2024.
+   This Internet-Draft will expire on 31 May 2024.
 
 Copyright Notice
 
@@ -89,10 +91,16 @@ Table of Contents
 
    The Network Time Protocol (NTP) and Network Time Security (NTS)
    documents define a number of assigned number registries, collectively
-   called the NTP registries.  Some registries have wrong values, some
-   registries do not follow current common practice, and some are just
-   right.  For the sake of completeness, this document reviews all NTP
-   and NTS registries, and makes updates where necessary.
+   called the NTP registries.  The NTP registries can all be found at
+   https://www.iana.org/assignments/ntp/nts.xhtml
+   (https://www.iana.org/assignments/ntp/nts.xhtml) and the NTS
+   registries can all be found at https://www.iana.org/assignments/nts/
+   nts.xhtml (https://www.iana.org/assignments/nts/nts.xhtml).
+
+   Some registries have wrong values, some registries do not follow
+   current common practice, and some are just right.  For the sake of
+   completeness, this document reviews all NTP and NTS registries, and
+   makes updates where necessary.
 
    The bulk of this document can be divided into two parts:
 
@@ -186,7 +194,7 @@ Table of Contents
       Use.
 
    *  Entries with ASCII fields are now limited to uppercase letters or
-      digit; fields starting with 0x58, the uppercase letter "X", are
+      digits; fields starting with 0x58, the uppercase letter "X", are
       reserved for Private or Experimental Use.
 
    *  The policy for every registry is now Specification Required, as
@@ -225,7 +233,7 @@ Table of Contents
 
    *  ID (required): a four-byte value padded on the right with all-
       bits-zero.  Each byte other than padding must be an ASCII
-      uppercase letter or digit.
+      uppercase letter or digits.
 
    *  Clock source (required): A brief text description of the ID.
 
@@ -246,7 +254,7 @@ Table of Contents
 
    *  ID (required): a four-byte value padded on the right with all-
       bits-zero.  Each byte other than padding must be an ASCII
-      uppercase letter or digit.
+      uppercase letter or digits.
 
    *  Meaning source (required): A brief text description of the ID.
 
