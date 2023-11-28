@@ -146,7 +146,7 @@ The following general guidelines apply to all registries updated here:
 
 - Every registry reserves a partition for Private or Experimental Use.
 
-- Entries with ASCII fields are now limited to uppercase letters or digit; fields
+- Entries with ASCII fields are now limited to uppercase letters or digits; fields
 starting with 0x58, the uppercase letter "X", are reserved for Private or
 Experimental Use.
 
@@ -185,7 +185,7 @@ and development. IANA cannot assign them.
 The columns are defined as follows:
 
 - ID (required): a four-byte value padded on the right with all-bits-zero.
-Each byte other than padding must be an ASCII uppercase letter or digit.
+Each byte other than padding must be an ASCII uppercase letter or digits.
 
 - Clock source (required): A brief text description of the ID.
 
@@ -205,7 +205,7 @@ and development. IANA cannot assign them.
 The columns are defined as follows:
 
 - ID (required): a four-byte value padded on the right with all-bits-zero.
-Each byte other than padding must be an ASCII uppercase letter or digit.
+Each byte other than padding must be an ASCII uppercase letter or digits.
 
 - Meaning source (required): A brief text description of the ID.
 
