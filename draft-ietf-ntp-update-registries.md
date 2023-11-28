@@ -36,6 +36,7 @@ normative:
 The Network Time Protocol (NTP) and Network Time Security (NTS) documents
 define a number of assigned number registries, collectively called the NTP
 registries.
+
 Some registries have wrong values, some registries
 do not follow current common practice, and some are just right.
 For the sake of completeness, this document reviews all NTP and NTS registries,
@@ -51,6 +52,11 @@ RFC 7821.
 The Network Time Protocol (NTP) and Network Time Security (NTS) documents
 define a number of assigned number registries, collectively called the NTP
 registries.
+The NTP registries can all be found at
+<https://www.iana.org/assignments/ntp/nts.xhtml>
+and the NTS registries can all be found at
+<https://www.iana.org/assignments/nts/nts.xhtml>.
+
 Some registries have wrong values, some registries
 do not follow current common practice, and some are just right.
 For the sake of completeness, this document reviews all NTP and NTS registries,
