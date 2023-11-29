@@ -53,7 +53,7 @@ The Network Time Protocol (NTP) and Network Time Security (NTS) documents
 define a number of assigned number registries, collectively called the NTP
 registries.
 The NTP registries can all be found at
-<https://www.iana.org/assignments/ntp/nts.xhtml>
+<https://www.iana.org/assignments/ntp-parameters/ntp-parameters.xhtml>
 and the NTS registries can all be found at
 <https://www.iana.org/assignments/nts/nts.xhtml>.
 
