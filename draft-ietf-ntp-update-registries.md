@@ -105,7 +105,10 @@ Field Types registry.
 
 {{RFC7822}} clarified the processing rules for Extension Field Types,
 particularly around the interaction with the Message Authentication Code
-(MAC) field.
+(MAC) field.  NTPv4 packets may contain a MAC, but it appears where one would
+expect an extension even though it does not have the type/length header of an
+extension.
+
 
 {{RFC8573}} changed the cryptography used in the MAC field.
 
