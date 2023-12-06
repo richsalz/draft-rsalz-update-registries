@@ -4,10 +4,10 @@
 
 ntp                                                              R. Salz
 Internet-Draft                                       Akamai Technologies
-Updates: 5905, 5906, 8573, 7822, 7821 (if               29 November 2023
+Updates: 5905, 5906, 8573, 7822, 7821 (if                6 December 2023
          approved)                                                      
 Intended status: Standards Track                                        
-Expires: 1 June 2024
+Expires: 8 June 2024
 
 
                       Updating the NTP Registries
@@ -54,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 June 2024.
+   This Internet-Draft will expire on 8 June 2024.
 
 Copyright Notice
 
@@ -147,7 +147,9 @@ Table of Contents
 
    [RFC7822] clarified the processing rules for Extension Field Types,
    particularly around the interaction with the Message Authentication
-   Code (MAC) field.
+   Code (MAC) field.  NTPv4 packets may contain a MAC, but it appears
+   where one would expect an extension even though it does not have the
+   type/length header of an extension.
 
    [RFC8573] changed the cryptography used in the MAC field.
 
