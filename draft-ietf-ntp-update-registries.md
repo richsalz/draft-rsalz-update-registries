@@ -106,8 +106,8 @@ Field Types registry.
 {{RFC7822}} clarified the processing rules for Extension Field Types,
 particularly around the interaction with the Message Authentication Code
 (MAC) field.  NTPv4 packets may contain a MAC, but it appears where one would
-expect an extension even though it does not have the type/length header of an
-extension.
+expect an extension with an extension ID of zero and a length of zero.
+This document adds a registration for the ID, below.
 
 
 {{RFC8573}} changed the cryptography used in the MAC field.
@@ -245,9 +245,12 @@ The columns are defined as follows:
 - Reference (required): the publication defining the field type.
 
 The table is replaced with the following entries.
+IANA is requested to replace "This RFC" with the actual RFC number once
+assigned.
 
 | Field Type | Meaning                             | Reference |
 |:-----------|:------------------------------------|:----------|
+| 0x0000     | Cryptographic MAC                   | RFC 5905, This RFC  |
 | 0x0002     | Reserved for historic reasons       | This RFC  |
 | 0x0102     | Reserved for historic reasons       | This RFC  |
 | 0x0104     | Unique Identifier                   | RFC 8915, Section 5.3 |
