@@ -4,10 +4,10 @@
 
 ntp                                                              R. Salz
 Internet-Draft                                       Akamai Technologies
-Updates: 5905, 5906, 8573, 7822, 7821 (if                6 December 2023
+Updates: 5905, 5906, 8573, 7822, 7821 (if               14 December 2023
          approved)                                                      
 Intended status: Standards Track                                        
-Expires: 8 June 2024
+Expires: 16 June 2024
 
 
                       Updating the NTP Registries
@@ -54,7 +54,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 June 2024.
+   This Internet-Draft will expire on 16 June 2024.
 
 Copyright Notice
 
@@ -148,8 +148,9 @@ Table of Contents
    [RFC7822] clarified the processing rules for Extension Field Types,
    particularly around the interaction with the Message Authentication
    Code (MAC) field.  NTPv4 packets may contain a MAC, but it appears
-   where one would expect an extension even though it does not have the
-   type/length header of an extension.
+   where one would expect an extension with an extension ID of zero and
+   a length of zero.  This document adds a registration for the ID,
+   below.
 
    [RFC8573] changed the cryptography used in the MAC field.
 
@@ -293,146 +294,149 @@ Table of Contents
 
    *  Reference (required): the publication defining the field type.
 
-   The table is replaced with the following entries.
+   The table is replaced with the following entries.  IANA is requested
+   to replace "This RFC" with the actual RFC number once assigned.
 
-       +============+===============================+=============+
-       | Field Type | Meaning                       | Reference   |
-       +============+===============================+=============+
-       | 0x0002     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x0102     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x0104     | Unique Identifier             | RFC 8915,   |
-       |            |                               | Section 5.3 |
-       +------------+-------------------------------+-------------+
-       | 0x0200     | No-Operation Request          | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x0201     | Association Message Request   | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x0202     | Certificate Message Request   | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x0203     | Cookie Message Request        | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x0204     | Autokey Message Request       | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x0204     | NTS Cookie                    | RFC 8915,   |
-       |            |                               | Section 5.4 |
-       +------------+-------------------------------+-------------+
-       | 0x0205     | Leapseconds Message Request   | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x0206     | Sign Message Request          | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x0207     | IFF Identity Message Request  | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x0208     | GQ Identity Message Request   | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x0209     | MV Identity Message Request   | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x0302     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x0304     | NTS Cookie Placeholder        | RFC 8915,   |
-       |            |                               | Section 5.5 |
-       +------------+-------------------------------+-------------+
-       | 0x0402     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x0404     | NTS Authenticator and         | RFC 8915,   |
-       |            | Encrypted Extension Fields    | Section 5.6 |
-       +------------+-------------------------------+-------------+
-       | 0x0502     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x0602     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x0702     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x0902     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x2005     | UDP Checksum Complement       | RFC 7821    |
-       +------------+-------------------------------+-------------+
-       | 0x8002     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x8102     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x8200     | No-Operation Response         | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x8201     | Association Message Response  | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x8202     | Certificate Message Response  | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x8203     | Cookie Message Response       | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x8204     | Autokey Message Response      | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x8205     | Leapseconds Message Response  | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x8206     | Sign Message Response         | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x8207     | IFF Identity Message Response | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x8208     | GQ Identity Message Response  | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x8209     | MV Identity Message Response  | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0x8302     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x8402     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x8502     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x8602     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x8702     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x8802     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0x8902     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0xC002     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0xC102     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0xC200     | No-Operation Error Response   | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0xC201     | Association Message Error     | RFC 5906    |
-       |            | Response                      |             |
-       +------------+-------------------------------+-------------+
-       | 0xC202     | Certificate Message Error     | RFC 5906    |
-       |            | Response                      |             |
-       +------------+-------------------------------+-------------+
-       | 0xC203     | Cookie Message Error Response | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0xC204     | Autokey Message Error         | RFC 5906    |
-       |            | Response                      |             |
-       +------------+-------------------------------+-------------+
-       | 0xC205     | Leapseconds Message Error     | RFC 5906    |
-       |            | Response                      |             |
-       +------------+-------------------------------+-------------+
-       | 0xC206     | Sign Message Error Response   | RFC 5906    |
-       +------------+-------------------------------+-------------+
-       | 0xC207     | IFF Identity Message Error    | RFC 5906    |
-       |            | Response                      |             |
-       +------------+-------------------------------+-------------+
-       | 0xC208     | GQ Identity Message Error     | RFC 5906    |
-       |            | Response                      |             |
-       +------------+-------------------------------+-------------+
-       | 0xC209     | MV Identity Message Error     | RFC 5906    |
-       |            | Response                      |             |
-       +------------+-------------------------------+-------------+
-       | 0xC302     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0xC402     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0xC502     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0xC602     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0xC702     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0xC802     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
-       | 0xC902     | Reserved for historic reasons | This RFC    |
-       +------------+-------------------------------+-------------+
+    +============+===============================+====================+
+    | Field Type | Meaning                       | Reference          |
+    +============+===============================+====================+
+    | 0x0000     | Cryptographic MAC             | RFC 5905, This RFC |
+    +------------+-------------------------------+--------------------+
+    | 0x0002     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x0102     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x0104     | Unique Identifier             | RFC 8915,          |
+    |            |                               | Section 5.3        |
+    +------------+-------------------------------+--------------------+
+    | 0x0200     | No-Operation Request          | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x0201     | Association Message Request   | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x0202     | Certificate Message Request   | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x0203     | Cookie Message Request        | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x0204     | Autokey Message Request       | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x0204     | NTS Cookie                    | RFC 8915,          |
+    |            |                               | Section 5.4        |
+    +------------+-------------------------------+--------------------+
+    | 0x0205     | Leapseconds Message Request   | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x0206     | Sign Message Request          | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x0207     | IFF Identity Message Request  | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x0208     | GQ Identity Message Request   | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x0209     | MV Identity Message Request   | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x0302     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x0304     | NTS Cookie Placeholder        | RFC 8915,          |
+    |            |                               | Section 5.5        |
+    +------------+-------------------------------+--------------------+
+    | 0x0402     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x0404     | NTS Authenticator and         | RFC 8915,          |
+    |            | Encrypted Extension Fields    | Section 5.6        |
+    +------------+-------------------------------+--------------------+
+    | 0x0502     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x0602     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x0702     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x0902     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x2005     | UDP Checksum Complement       | RFC 7821           |
+    +------------+-------------------------------+--------------------+
+    | 0x8002     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x8102     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x8200     | No-Operation Response         | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x8201     | Association Message Response  | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x8202     | Certificate Message Response  | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x8203     | Cookie Message Response       | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x8204     | Autokey Message Response      | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x8205     | Leapseconds Message Response  | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x8206     | Sign Message Response         | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x8207     | IFF Identity Message Response | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x8208     | GQ Identity Message Response  | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x8209     | MV Identity Message Response  | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0x8302     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x8402     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x8502     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x8602     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x8702     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x8802     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0x8902     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0xC002     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0xC102     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0xC200     | No-Operation Error Response   | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0xC201     | Association Message Error     | RFC 5906           |
+    |            | Response                      |                    |
+    +------------+-------------------------------+--------------------+
+    | 0xC202     | Certificate Message Error     | RFC 5906           |
+    |            | Response                      |                    |
+    +------------+-------------------------------+--------------------+
+    | 0xC203     | Cookie Message Error Response | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0xC204     | Autokey Message Error         | RFC 5906           |
+    |            | Response                      |                    |
+    +------------+-------------------------------+--------------------+
+    | 0xC205     | Leapseconds Message Error     | RFC 5906           |
+    |            | Response                      |                    |
+    +------------+-------------------------------+--------------------+
+    | 0xC206     | Sign Message Error Response   | RFC 5906           |
+    +------------+-------------------------------+--------------------+
+    | 0xC207     | IFF Identity Message Error    | RFC 5906           |
+    |            | Response                      |                    |
+    +------------+-------------------------------+--------------------+
+    | 0xC208     | GQ Identity Message Error     | RFC 5906           |
+    |            | Response                      |                    |
+    +------------+-------------------------------+--------------------+
+    | 0xC209     | MV Identity Message Error     | RFC 5906           |
+    |            | Response                      |                    |
+    +------------+-------------------------------+--------------------+
+    | 0xC302     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0xC402     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0xC502     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0xC602     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0xC702     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0xC802     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
+    | 0xC902     | Reserved for historic reasons | This RFC           |
+    +------------+-------------------------------+--------------------+
 
-                                 Table 1
+                                  Table 1
 
 5.  Acknowledgements
 
