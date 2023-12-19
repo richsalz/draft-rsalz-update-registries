@@ -250,7 +250,7 @@ assigned.
 
 | Field Type | Meaning                             | Reference |
 |:-----------|:------------------------------------|:----------|
-| 0x0000     | Cryptographic MAC                   | RFC 5905, This RFC  |
+| 0x0000     | Crypto-NAK; authentication failure  | RFC 5905, This RFC  |
 | 0x0002     | Reserved for historic reasons       | This RFC  |
 | 0x0102     | Reserved for historic reasons       | This RFC  |
 | 0x0104     | Unique Identifier                   | RFC 8915, Section 5.3 |
