@@ -104,11 +104,9 @@ only for use within the Autokey extensions.
 Field Types registry.
 
 {{RFC7822}} clarified the processing rules for Extension Field Types,
-particularly around the interaction with the Message Authentication Code
-(MAC) field.  NTPv4 packets may contain a MAC, but it appears where one would
-expect an extension with an extension ID of zero and a length of zero.
-This document adds a registration for the ID, below.
-
+particularly around the interaction with the Message Authentication
+Code (MAC) field. NTPv4 packets may contain a MAC that appears where
+one would expect the next extension field header.
 
 {{RFC8573}} changed the cryptography used in the MAC field.
 
@@ -250,7 +248,7 @@ assigned.
 
 | Field Type | Meaning                             | Reference |
 |:-----------|:------------------------------------|:----------|
-| 0x0000     | Crypto-NAK; authentication failure  | RFC 5905, This RFC  |
+| 0x0000     | Crypto-NAK; authentication failure  | RFC 5905  |
 | 0x0002     | Reserved for historic reasons       | This RFC  |
 | 0x0102     | Reserved for historic reasons       | This RFC  |
 | 0x0104     | Unique Identifier                   | RFC 8915, Section 5.3 |
@@ -312,6 +310,14 @@ assigned.
 | 0xC702     | Reserved for historic reasons       | This RFC  |
 | 0xC802     | Reserved for historic reasons       | This RFC  |
 | 0xC902     | Reserved for historic reasons       | This RFC  |
+| 0xF000-<br>0xFFFF    | Reserved for Experimental Use       | This RFC  |
+
+# Security Considerations
+
+This document updates how NTP extension points are made public.
+While this can help, for example, with packet dumps and tracing,
+the true security considerations should be documented where the
+extension is defined.
 
 # Acknowledgements
 
