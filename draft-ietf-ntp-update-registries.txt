@@ -4,10 +4,10 @@
 
 ntp                                                              R. Salz
 Internet-Draft                                       Akamai Technologies
-Updates: 5905, 5906, 8573, 7822, 7821 (if               19 December 2023
+Updates: 5905, 5906, 8573, 7822, 7821 (if                    11 May 2024
          approved)                                                      
 Intended status: Standards Track                                        
-Expires: 21 June 2024
+Expires: 12 November 2024
 
 
                       Updating the NTP Registries
@@ -54,11 +54,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 21 June 2024.
+   This Internet-Draft will expire on 12 November 2024.
 
 Copyright Notice
 
-   Copyright (c) 2023 IETF Trust and the persons identified as the
+   Copyright (c) 2024 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -83,8 +83,9 @@ Table of Contents
      4.1.  NTP Reference Identifier Codes
      4.2.  NTP Kiss-o'-Death Codes
      4.3.  NTP Extension Field Types
-   5.  Acknowledgements
-   6.  Normative References
+   5.  Security Considerations
+   6.  Acknowledgements
+   7.  Normative References
    Author's Address
 
 1.  Introduction
@@ -147,10 +148,8 @@ Table of Contents
 
    [RFC7822] clarified the processing rules for Extension Field Types,
    particularly around the interaction with the Message Authentication
-   Code (MAC) field.  NTPv4 packets may contain a MAC, but it appears
-   where one would expect an extension with an extension ID of zero and
-   a length of zero.  This document adds a registration for the ID,
-   below.
+   Code (MAC) field.  NTPv4 packets may contain a MAC that appears where
+   one would expect the next extension field header.
 
    [RFC8573] changed the cryptography used in the MAC field.
 
@@ -300,8 +299,7 @@ Table of Contents
      +============+====================================+=============+
      | Field Type | Meaning                            | Reference   |
      +============+====================================+=============+
-     | 0x0000     | Crypto-NAK; authentication failure | RFC 5905,   |
-     |            |                                    | This RFC    |
+     | 0x0000     | Crypto-NAK; authentication failure | RFC 5905    |
      +------------+------------------------------------+-------------+
      | 0x0002     | Reserved for historic reasons      | This RFC    |
      +------------+------------------------------------+-------------+
@@ -430,10 +428,20 @@ Table of Contents
      +------------+------------------------------------+-------------+
      | 0xC902     | Reserved for historic reasons      | This RFC    |
      +------------+------------------------------------+-------------+
+     | 0xF000-    | Reserved for Experimental Use      | This RFC    |
+     | 0xFFFF     |                                    |             |
+     +------------+------------------------------------+-------------+
 
                                   Table 1
 
-5.  Acknowledgements
+5.  Security Considerations
+
+   This document updates how NTP extension points are made public.
+   While this can help, for example, with packet dumps and tracing, the
+   true security considerations should be documented where the extension
+   is defined.
+
+6.  Acknowledgements
 
    The members of the NTP Working Group helped a great deal.  Notable
    contributors include:
@@ -448,7 +456,7 @@ Table of Contents
 
    *  Tamme Dittrich, Tweede Golf
 
-6.  Normative References
+7.  Normative References
 
    [RFC5905]  Mills, D., Martin, J., Ed., Burbank, J., and W. Kasch,
               "Network Time Protocol Version 4: Protocol and Algorithms
