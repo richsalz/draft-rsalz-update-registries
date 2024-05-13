@@ -314,10 +314,9 @@ assigned.
 
 # Security Considerations
 
-This document updates how NTP extension points are made public.
-While this can help, for example, with packet dumps and tracing,
-the true security considerations should be documented where the
-extension is defined.
+This document adds no new security considerations as they should be detailed
+in the document that defines the extension.  See the References column of the
+appropriate table.
 
 # Acknowledgements
 
