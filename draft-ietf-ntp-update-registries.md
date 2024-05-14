@@ -86,7 +86,7 @@ characters; padded on the right with all-bits-zero if necessary.
 Entries that start with 0x58, the ASCII
 letter uppercase X, are reserved for Private or Experimental Use.
 Both registries are first-come first-served. The formal request to define
-the registries is in Section 16.
+the registries is in Section 16 of that RFC.
 
 ## Extension Field Types
 
@@ -112,7 +112,7 @@ one would expect the next extension field header.
 
 {{RFC8915}} added four new entries to the Extension Field Types registry.
 
-The following problems exists with the current registry:
+The following problems exist with the current registry:
 
 - Many of the entries in the Extension Field Types registry have
 swapped some of the nibbles; 0x1234 is listed as 0x1432 for example.
@@ -314,7 +314,7 @@ assigned.
 
 # Security Considerations
 
-This document adds no new security considerations as they should be detailed
+This document adds no new security considerations, as they should be detailed
 in the document that defines the extension.  See the References column of the
 appropriate table.
 
