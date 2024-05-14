@@ -82,7 +82,6 @@ Table of Contents
    4.  IANA Considerations
      4.1.  NTP Reference Identifier Codes
      4.2.  NTP Kiss-o'-Death Codes
-     4.3.  NTP Extension Field Types
    5.  Security Considerations
    6.  Acknowledgements
    7.  Normative References
@@ -129,7 +128,7 @@ Table of Contents
    necessary.  Entries that start with 0x58, the ASCII letter uppercase
    X, are reserved for Private or Experimental Use. Both registries are
    first-come first-served.  The formal request to define the registries
-   is in Section 16 of that RFC.
+   is in [RFC5905], Section 16.
 
 2.2.  Extension Field Types
 
@@ -263,9 +262,7 @@ Table of Contents
 
    *  Reference (required): the publication defining the ID.
 
-   The existing entries are left unchanged.
-
-4.3.  NTP Extension Field Types
+   The existing entries are left unchanged. ## NTP Extension Field Types
 
    The registration procedure is changed to Specification Required.
 
@@ -436,8 +433,8 @@ Table of Contents
 
 5.  Security Considerations
 
-   This document adds no new security considerations, as they should be
-   detailed in the document that defines the extension.  See the
+   This document adds no new security considerations, as they are
+   defined in the document that defines the extension.  See the
    References column of the appropriate table.
 
 6.  Acknowledgements
