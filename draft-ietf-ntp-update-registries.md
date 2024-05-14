@@ -86,7 +86,7 @@ characters; padded on the right with all-bits-zero if necessary.
 Entries that start with 0x58, the ASCII
 letter uppercase X, are reserved for Private or Experimental Use.
 Both registries are first-come first-served. The formal request to define
-the registries is in Section 16 of that RFC.
+the registries is in {{RFC5905, Section 16}}.
 
 ## Extension Field Types
 
@@ -213,7 +213,6 @@ Each byte other than padding must be an ASCII uppercase letter or digits.
 - Reference (required): the publication defining the ID.
 
 The existing entries are left unchanged.
-
 ## NTP Extension Field Types
 
 The registration procedure is changed to Specification Required.
@@ -314,7 +313,7 @@ assigned.
 
 # Security Considerations
 
-This document adds no new security considerations, as they should be detailed
+This document adds no new security considerations, as they are defined
 in the document that defines the extension.  See the References column of the
 appropriate table.
 
