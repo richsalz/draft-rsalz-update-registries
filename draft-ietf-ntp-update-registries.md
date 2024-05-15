@@ -213,6 +213,7 @@ Each byte other than padding must be an ASCII uppercase letter or digits.
 - Reference (required): the publication defining the ID.
 
 The existing entries are left unchanged.
+
 ## NTP Extension Field Types
 
 The registration procedure is changed to Specification Required.
