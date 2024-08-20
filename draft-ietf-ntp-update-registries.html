@@ -17,26 +17,25 @@ and makes updates where necessary.
        This document updates RFC 5905, RFC 5906, RFC 8573, RFC 7822, and
 RFC 7821. 
     " name="description">
-<meta content="xml2rfc 3.21.0" name="generator">
+<meta content="xml2rfc 3.22.0" name="generator">
 <meta content="NTP" name="keyword">
 <meta content="extensions" name="keyword">
 <meta content="registries" name="keyword">
 <meta content="IANA" name="keyword">
 <meta content="draft-ietf-ntp-update-registries-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.21.0
-    Python 3.11.9
+  xml2rfc 3.22.0
+    Python 3.12.3
     ConfigArgParse 1.7
     google-i18n-address 3.1.0
     intervaltree 3.1.0
-    Jinja2 3.1.2
-    lxml 4.9.3
-    platformdirs 4.2.1
+    Jinja2 3.1.4
+    lxml 4.9.4
+    platformdirs 4.2.2
     pycountry 22.3.5
     PyYAML 6.0.1
-    requests 2.31.0
-    setuptools 68.2.2
-    six 1.16.0
+    requests 2.32.3
+    setuptools 70.3.0
     wcwidth 0.2.13
 -->
 <link href="draft-ietf-ntp-update-registries.xml" rel="alternate" type="application/rfc+xml">
@@ -1036,11 +1035,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Updating the NTP Registries</td>
-<td class="right">May 2024</td>
+<td class="right">August 2024</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Salz</td>
-<td class="center">Expires 16 November 2024</td>
+<td class="center">Expires 21 February 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1056,12 +1055,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc5905" class="eref">5905</a>, <a href="https://www.rfc-editor.org/rfc/rfc5906" class="eref">5906</a>, <a href="https://www.rfc-editor.org/rfc/rfc8573" class="eref">8573</a>, <a href="https://www.rfc-editor.org/rfc/rfc7822" class="eref">7822</a>, <a href="https://www.rfc-editor.org/rfc/rfc7821" class="eref">7821</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-05-15" class="published">15 May 2024</time>
+<time datetime="2024-08-20" class="published">20 August 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-11-16">16 November 2024</time></dd>
+<dd class="expires"><time datetime="2025-02-21">21 February 2025</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1115,7 +1114,7 @@ RFC 7821.<a href="#section-abstract-3" class="pilcrow">¶</a></p>
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 16 November 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 21 February 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1283,7 +1282,12 @@ This was due to documentation errors with the original implementation
 of Autokey.
 This document marks the erroneous values as reserved, in case there
 is an implementation that used the registered values
-instead of what the original implementation used.<a href="#section-2.2-8.1.1" class="pilcrow">¶</a></p>
+instead of what the original implementation used.
+Applications that might have used those values would have realized
+that they did not interoperate with the dominant (if not only)
+implementation at the time.
+Marking the values as reserved ensures that any such applications would still
+be able to work as-is.<a href="#section-2.2-8.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-2.2-8.2">
             <p id="section-2.2-8.2.1">Some values were mistakenly re-used.<a href="#section-2.2-8.2.1" class="pilcrow">¶</a></p>
