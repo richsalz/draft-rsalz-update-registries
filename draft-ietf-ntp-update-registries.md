@@ -121,6 +121,11 @@ of Autokey.
 This document marks the erroneous values as reserved, in case there
 is an implementation that used the registered values
 instead of what the original implementation used.
+Applications that might have used those values would have realized
+that they did not interoperate with the dominant (if not only)
+implementation at the time.
+Marking the values as reserved ensures that any such applications would still
+be able to work as-is.
 - Some values were mistakenly re-used.
 
 ## Network Time Security Registries
