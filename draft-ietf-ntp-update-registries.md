@@ -275,6 +275,7 @@ assigned.
 | 0x0502     | Reserved for historic reasons       | This RFC  |
 | 0x0602     | Reserved for historic reasons       | This RFC  |
 | 0x0702     | Reserved for historic reasons       | This RFC  |
+| 0x0802     | Reserved for historic reasons       | This RFC  |
 | 0x0902     | Reserved for historic reasons       | This RFC  |
 | 0x2005     | UDP Checksum Complement             | RFC 7821  |
 | 0x8002     | Reserved for historic reasons       | This RFC  |
